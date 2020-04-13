@@ -47,6 +47,20 @@
             this.txtPages = new System.Windows.Forms.TextBox();
             this.txtMins = new System.Windows.Forms.TextBox();
             this.pnlProduct = new System.Windows.Forms.Panel();
+            this.lblPanelChamber = new System.Windows.Forms.Label();
+            this.pnlChamber = new System.Windows.Forms.Panel();
+            this.comboInstruments = new System.Windows.Forms.ComboBox();
+            this.lblInstruments = new System.Windows.Forms.Label();
+            this.lblPanelOrchestral = new System.Windows.Forms.Label();
+            this.pnlOrchestral = new System.Windows.Forms.Panel();
+            this.txtConductors = new System.Windows.Forms.TextBox();
+            this.lblConductors = new System.Windows.Forms.Label();
+            this.lblPanelCDClassical = new System.Windows.Forms.Label();
+            this.pnlCDClassical = new System.Windows.Forms.Panel();
+            this.txtArtists = new System.Windows.Forms.TextBox();
+            this.lblArtists = new System.Windows.Forms.Label();
+            this.txtLabel = new System.Windows.Forms.TextBox();
+            this.lblLabel = new System.Windows.Forms.Label();
             this.lblPanelDVD = new System.Windows.Forms.Label();
             this.pnlDVD = new System.Windows.Forms.Panel();
             this.lblMins = new System.Windows.Forms.Label();
@@ -71,28 +85,26 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblUPC = new System.Windows.Forms.Label();
             this.lblPanelProduct = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pnlDataControls = new System.Windows.Forms.Panel();
+            this.lblPanelDataControls = new System.Windows.Forms.Label();
+            this.lblDataProcess1 = new System.Windows.Forms.Label();
+            this.lblDataProcess2 = new System.Windows.Forms.Label();
+            this.btnEnterUPC = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnSaveUpdates = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnClearForm = new System.Windows.Forms.Button();
+            this.btnExitProgram = new System.Windows.Forms.Button();
             this.pnlTransactions.SuspendLayout();
             this.pnlProduct.SuspendLayout();
+            this.pnlChamber.SuspendLayout();
+            this.pnlOrchestral.SuspendLayout();
+            this.pnlCDClassical.SuspendLayout();
             this.pnlDVD.SuspendLayout();
             this.pnlBookCIS.SuspendLayout();
             this.pnlBook.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlDataControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -238,8 +250,8 @@
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(338, 30);
             this.txtAuthor.TabIndex = 14;
-            this.tipEnteringData.SetToolTip(this.txtAuthor, "Make the product\'s title anything you want.\r\nIt just can\'t be over 1,000 letters " +
-        "long!");
+            this.tipEnteringData.SetToolTip(this.txtAuthor, "Enter the full names of authors.\r\nUse commas to separate their names if more than" +
+        " one.");
             // 
             // txtPages
             // 
@@ -248,7 +260,7 @@
             this.txtPages.Name = "txtPages";
             this.txtPages.Size = new System.Drawing.Size(82, 30);
             this.txtPages.TabIndex = 14;
-            this.tipEnteringData.SetToolTip(this.txtPages, "How many of this product do we have?\r\nNo decimal values allowed.");
+            this.tipEnteringData.SetToolTip(this.txtPages, "How many pages are in the book.");
             // 
             // txtMins
             // 
@@ -257,17 +269,17 @@
             this.txtMins.Name = "txtMins";
             this.txtMins.Size = new System.Drawing.Size(82, 30);
             this.txtMins.TabIndex = 19;
-            this.tipEnteringData.SetToolTip(this.txtMins, "How many of this product do we have?\r\nNo decimal values allowed.");
+            this.tipEnteringData.SetToolTip(this.txtMins, "The runtime of the CD in minutes.");
             // 
             // pnlProduct
             // 
             this.pnlProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlProduct.Controls.Add(this.label7);
-            this.pnlProduct.Controls.Add(this.panel3);
-            this.pnlProduct.Controls.Add(this.label4);
-            this.pnlProduct.Controls.Add(this.panel2);
-            this.pnlProduct.Controls.Add(this.label1);
-            this.pnlProduct.Controls.Add(this.panel1);
+            this.pnlProduct.Controls.Add(this.lblPanelChamber);
+            this.pnlProduct.Controls.Add(this.pnlChamber);
+            this.pnlProduct.Controls.Add(this.lblPanelOrchestral);
+            this.pnlProduct.Controls.Add(this.pnlOrchestral);
+            this.pnlProduct.Controls.Add(this.lblPanelCDClassical);
+            this.pnlProduct.Controls.Add(this.pnlCDClassical);
             this.pnlProduct.Controls.Add(this.lblPanelDVD);
             this.pnlProduct.Controls.Add(this.pnlDVD);
             this.pnlProduct.Controls.Add(this.lblPanelBookCIS);
@@ -287,6 +299,148 @@
             this.pnlProduct.Name = "pnlProduct";
             this.pnlProduct.Size = new System.Drawing.Size(951, 506);
             this.pnlProduct.TabIndex = 5;
+            // 
+            // lblPanelChamber
+            // 
+            this.lblPanelChamber.AutoSize = true;
+            this.lblPanelChamber.Font = new System.Drawing.Font("Gadugi", 12F);
+            this.lblPanelChamber.Location = new System.Drawing.Point(460, 380);
+            this.lblPanelChamber.Name = "lblPanelChamber";
+            this.lblPanelChamber.Size = new System.Drawing.Size(89, 24);
+            this.lblPanelChamber.TabIndex = 22;
+            this.lblPanelChamber.Text = "Chamber";
+            this.lblPanelChamber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlChamber
+            // 
+            this.pnlChamber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlChamber.Controls.Add(this.comboInstruments);
+            this.pnlChamber.Controls.Add(this.lblInstruments);
+            this.pnlChamber.Location = new System.Drawing.Point(460, 391);
+            this.pnlChamber.Name = "pnlChamber";
+            this.pnlChamber.Size = new System.Drawing.Size(423, 85);
+            this.pnlChamber.TabIndex = 21;
+            // 
+            // comboInstruments
+            // 
+            this.comboInstruments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboInstruments.FormattingEnabled = true;
+            this.comboInstruments.Items.AddRange(new object[] {
+            "String",
+            "Percussion",
+            "Brass",
+            "Woodwind",
+            "Piano"});
+            this.comboInstruments.Location = new System.Drawing.Point(8, 46);
+            this.comboInstruments.Name = "comboInstruments";
+            this.comboInstruments.Size = new System.Drawing.Size(403, 28);
+            this.comboInstruments.TabIndex = 1;
+            this.tipEnteringData.SetToolTip(this.comboInstruments, "Choose which instruments were used in the dropdown below.");
+            // 
+            // lblInstruments
+            // 
+            this.lblInstruments.AutoSize = true;
+            this.lblInstruments.Location = new System.Drawing.Point(1, 21);
+            this.lblInstruments.Name = "lblInstruments";
+            this.lblInstruments.Size = new System.Drawing.Size(104, 20);
+            this.lblInstruments.TabIndex = 0;
+            this.lblInstruments.Text = "Instruments:";
+            // 
+            // lblPanelOrchestral
+            // 
+            this.lblPanelOrchestral.AutoSize = true;
+            this.lblPanelOrchestral.Font = new System.Drawing.Font("Gadugi", 12F);
+            this.lblPanelOrchestral.Location = new System.Drawing.Point(60, 380);
+            this.lblPanelOrchestral.Name = "lblPanelOrchestral";
+            this.lblPanelOrchestral.Size = new System.Drawing.Size(99, 24);
+            this.lblPanelOrchestral.TabIndex = 21;
+            this.lblPanelOrchestral.Text = "Orchestral";
+            this.lblPanelOrchestral.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlOrchestral
+            // 
+            this.pnlOrchestral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlOrchestral.Controls.Add(this.txtConductors);
+            this.pnlOrchestral.Controls.Add(this.lblConductors);
+            this.pnlOrchestral.Location = new System.Drawing.Point(60, 391);
+            this.pnlOrchestral.Name = "pnlOrchestral";
+            this.pnlOrchestral.Size = new System.Drawing.Size(383, 85);
+            this.pnlOrchestral.TabIndex = 20;
+            // 
+            // txtConductors
+            // 
+            this.txtConductors.Location = new System.Drawing.Point(7, 44);
+            this.txtConductors.Name = "txtConductors";
+            this.txtConductors.Size = new System.Drawing.Size(365, 30);
+            this.txtConductors.TabIndex = 1;
+            this.tipEnteringData.SetToolTip(this.txtConductors, "Enter the full name of conductors.\r\nSeparate names with commas if more than one.");
+            // 
+            // lblConductors
+            // 
+            this.lblConductors.AutoSize = true;
+            this.lblConductors.Location = new System.Drawing.Point(1, 21);
+            this.lblConductors.Name = "lblConductors";
+            this.lblConductors.Size = new System.Drawing.Size(111, 20);
+            this.lblConductors.TabIndex = 0;
+            this.lblConductors.Text = "Conductor(s):";
+            // 
+            // lblPanelCDClassical
+            // 
+            this.lblPanelCDClassical.AutoSize = true;
+            this.lblPanelCDClassical.Font = new System.Drawing.Font("Gadugi", 12F);
+            this.lblPanelCDClassical.Location = new System.Drawing.Point(60, 290);
+            this.lblPanelCDClassical.Name = "lblPanelCDClassical";
+            this.lblPanelCDClassical.Size = new System.Drawing.Size(113, 24);
+            this.lblPanelCDClassical.TabIndex = 19;
+            this.lblPanelCDClassical.Text = "CD Classical";
+            this.lblPanelCDClassical.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlCDClassical
+            // 
+            this.pnlCDClassical.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCDClassical.Controls.Add(this.txtArtists);
+            this.pnlCDClassical.Controls.Add(this.lblArtists);
+            this.pnlCDClassical.Controls.Add(this.txtLabel);
+            this.pnlCDClassical.Controls.Add(this.lblLabel);
+            this.pnlCDClassical.Location = new System.Drawing.Point(60, 303);
+            this.pnlCDClassical.Name = "pnlCDClassical";
+            this.pnlCDClassical.Size = new System.Drawing.Size(823, 65);
+            this.pnlCDClassical.TabIndex = 18;
+            // 
+            // txtArtists
+            // 
+            this.txtArtists.Location = new System.Drawing.Point(355, 22);
+            this.txtArtists.Name = "txtArtists";
+            this.txtArtists.Size = new System.Drawing.Size(456, 30);
+            this.txtArtists.TabIndex = 26;
+            this.tipEnteringData.SetToolTip(this.txtArtists, "Enter the full name of the artists.\r\nSeparate names with a comma if more than one" +
+        ".");
+            // 
+            // lblArtists
+            // 
+            this.lblArtists.AutoSize = true;
+            this.lblArtists.Location = new System.Drawing.Point(296, 25);
+            this.lblArtists.Name = "lblArtists";
+            this.lblArtists.Size = new System.Drawing.Size(60, 20);
+            this.lblArtists.TabIndex = 25;
+            this.lblArtists.Text = "Artists:";
+            // 
+            // txtLabel
+            // 
+            this.txtLabel.Location = new System.Drawing.Point(67, 22);
+            this.txtLabel.Name = "txtLabel";
+            this.txtLabel.Size = new System.Drawing.Size(210, 30);
+            this.txtLabel.TabIndex = 24;
+            this.tipEnteringData.SetToolTip(this.txtLabel, "What label released this CD?");
+            // 
+            // lblLabel
+            // 
+            this.lblLabel.AutoSize = true;
+            this.lblLabel.Location = new System.Drawing.Point(8, 25);
+            this.lblLabel.Name = "lblLabel";
+            this.lblLabel.Size = new System.Drawing.Size(53, 20);
+            this.lblLabel.TabIndex = 0;
+            this.lblLabel.Text = "Label:";
             // 
             // lblPanelDVD
             // 
@@ -330,6 +484,7 @@
             this.dtpReleaseDate.Name = "dtpReleaseDate";
             this.dtpReleaseDate.Size = new System.Drawing.Size(135, 30);
             this.dtpReleaseDate.TabIndex = 22;
+            this.tipEnteringData.SetToolTip(this.dtpReleaseDate, "Choose the release date in the calendar picker below.");
             this.dtpReleaseDate.Value = new System.DateTime(2020, 4, 10, 0, 0, 0, 0);
             // 
             // lblReleaseDate
@@ -347,6 +502,8 @@
             this.txtLeadActors.Name = "txtLeadActors";
             this.txtLeadActors.Size = new System.Drawing.Size(278, 30);
             this.txtLeadActors.TabIndex = 20;
+            this.tipEnteringData.SetToolTip(this.txtLeadActors, "Enter the full names of actors.\r\nUse commas to separate names if more than one.\r\n" +
+        "");
             // 
             // lblLeadActors
             // 
@@ -392,6 +549,7 @@
             this.comboCISArea.Name = "comboCISArea";
             this.comboCISArea.Size = new System.Drawing.Size(247, 28);
             this.comboCISArea.TabIndex = 21;
+            this.tipEnteringData.SetToolTip(this.comboCISArea, "Choose one of the possible areas in the dropdown box.");
             // 
             // lblCISArea
             // 
@@ -467,6 +625,7 @@
             this.txtISBNRight.Name = "txtISBNRight";
             this.txtISBNRight.Size = new System.Drawing.Size(51, 30);
             this.txtISBNRight.TabIndex = 16;
+            this.tipEnteringData.SetToolTip(this.txtISBNRight, "This is the \"right side\" of the ISBN");
             // 
             // txtISBNLeft
             // 
@@ -475,6 +634,7 @@
             this.txtISBNLeft.Name = "txtISBNLeft";
             this.txtISBNLeft.Size = new System.Drawing.Size(51, 30);
             this.txtISBNLeft.TabIndex = 15;
+            this.tipEnteringData.SetToolTip(this.txtISBNLeft, "This is the \"left side\" of the ISBN.");
             // 
             // lblISBN
             // 
@@ -535,148 +695,136 @@
             this.lblPanelProduct.TabIndex = 6;
             this.lblPanelProduct.Text = "Product";
             // 
-            // panel1
+            // pnlDataControls
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(60, 303);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(823, 65);
-            this.panel1.TabIndex = 18;
+            this.pnlDataControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDataControls.Controls.Add(this.btnDelete);
+            this.pnlDataControls.Controls.Add(this.btnSaveUpdates);
+            this.pnlDataControls.Controls.Add(this.btnEdit);
+            this.pnlDataControls.Controls.Add(this.btnFind);
+            this.pnlDataControls.Controls.Add(this.btnEnterUPC);
+            this.pnlDataControls.Controls.Add(this.lblDataProcess2);
+            this.pnlDataControls.Controls.Add(this.lblDataProcess1);
+            this.pnlDataControls.Location = new System.Drawing.Point(10, 733);
+            this.pnlDataControls.Name = "pnlDataControls";
+            this.pnlDataControls.Size = new System.Drawing.Size(951, 159);
+            this.pnlDataControls.TabIndex = 7;
             // 
-            // label1
+            // lblPanelDataControls
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gadugi", 12F);
-            this.label1.Location = new System.Drawing.Point(60, 290);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 24);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "CD Classical";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPanelDataControls.AutoSize = true;
+            this.lblPanelDataControls.Location = new System.Drawing.Point(10, 719);
+            this.lblPanelDataControls.Name = "lblPanelDataControls";
+            this.lblPanelDataControls.Size = new System.Drawing.Size(258, 24);
+            this.lblPanelDataControls.TabIndex = 8;
+            this.lblPanelDataControls.Text = "Controls for Data Processing";
             // 
-            // label2
+            // lblDataProcess1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Label:";
+            this.lblDataProcess1.AutoSize = true;
+            this.lblDataProcess1.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataProcess1.ForeColor = System.Drawing.Color.Red;
+            this.lblDataProcess1.Location = new System.Drawing.Point(4, 22);
+            this.lblDataProcess1.Name = "lblDataProcess1";
+            this.lblDataProcess1.Size = new System.Drawing.Size(788, 24);
+            this.lblDataProcess1.TabIndex = 9;
+            this.lblDataProcess1.Text = "These items require an entry of an item UPC (above) before they can be executed.";
             // 
-            // textBox1
+            // lblDataProcess2
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 30);
-            this.textBox1.TabIndex = 24;
+            this.lblDataProcess2.AutoSize = true;
+            this.lblDataProcess2.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataProcess2.ForeColor = System.Drawing.Color.Red;
+            this.lblDataProcess2.Location = new System.Drawing.Point(4, 46);
+            this.lblDataProcess2.Name = "lblDataProcess2";
+            this.lblDataProcess2.Size = new System.Drawing.Size(606, 24);
+            this.lblDataProcess2.TabIndex = 10;
+            this.lblDataProcess2.Text = "Press the \"Clear Form\" button when the operation is complete.";
             // 
-            // textBox2
+            // btnEnterUPC
             // 
-            this.textBox2.Location = new System.Drawing.Point(355, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(456, 30);
-            this.textBox2.TabIndex = 26;
+            this.btnEnterUPC.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnEnterUPC.ForeColor = System.Drawing.Color.White;
+            this.btnEnterUPC.Location = new System.Drawing.Point(8, 109);
+            this.btnEnterUPC.Name = "btnEnterUPC";
+            this.btnEnterUPC.Size = new System.Drawing.Size(145, 47);
+            this.btnEnterUPC.TabIndex = 11;
+            this.btnEnterUPC.Text = "Enter UPC";
+            this.btnEnterUPC.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // btnFind
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(296, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 20);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Label:";
+            this.btnFind.Location = new System.Drawing.Point(201, 109);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(145, 47);
+            this.btnFind.TabIndex = 12;
+            this.btnFind.Text = "Find / Display";
+            this.btnFind.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // btnEdit
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(60, 391);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(383, 85);
-            this.panel2.TabIndex = 20;
+            this.btnEdit.Location = new System.Drawing.Point(405, 109);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(145, 47);
+            this.btnEdit.TabIndex = 13;
+            this.btnEdit.Text = "Edit / Update";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // btnSaveUpdates
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Gadugi", 12F);
-            this.label4.Location = new System.Drawing.Point(60, 380);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 24);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Orchestral";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSaveUpdates.Location = new System.Drawing.Point(604, 109);
+            this.btnSaveUpdates.Name = "btnSaveUpdates";
+            this.btnSaveUpdates.Size = new System.Drawing.Size(145, 47);
+            this.btnSaveUpdates.TabIndex = 14;
+            this.btnSaveUpdates.Text = "Save Updates";
+            this.btnSaveUpdates.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // btnDelete
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 20);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Conductor(s):";
+            this.btnDelete.BackColor = System.Drawing.Color.Firebrick;
+            this.btnDelete.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(791, 109);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(145, 47);
+            this.btnDelete.TabIndex = 15;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // textBox3
+            // btnClearForm
             // 
-            this.textBox3.Location = new System.Drawing.Point(7, 44);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(365, 30);
-            this.textBox3.TabIndex = 1;
+            this.btnClearForm.BackColor = System.Drawing.Color.Firebrick;
+            this.btnClearForm.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearForm.ForeColor = System.Drawing.Color.White;
+            this.btnClearForm.Location = new System.Drawing.Point(10, 898);
+            this.btnClearForm.Name = "btnClearForm";
+            this.btnClearForm.Size = new System.Drawing.Size(338, 47);
+            this.btnClearForm.TabIndex = 16;
+            this.btnClearForm.Text = "Clear Form";
+            this.btnClearForm.UseVisualStyleBackColor = false;
             // 
-            // panel3
+            // btnExitProgram
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.comboBox1);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(460, 391);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(423, 85);
-            this.panel3.TabIndex = 21;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Instruments:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Gadugi", 12F);
-            this.label7.Location = new System.Drawing.Point(460, 380);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 24);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Chamber";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "String",
-            "Percussion",
-            "Brass",
-            "Woodwind",
-            "Piano"});
-            this.comboBox1.Location = new System.Drawing.Point(8, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(403, 28);
-            this.comboBox1.TabIndex = 1;
+            this.btnExitProgram.BackColor = System.Drawing.Color.Firebrick;
+            this.btnExitProgram.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExitProgram.ForeColor = System.Drawing.Color.White;
+            this.btnExitProgram.Location = new System.Drawing.Point(623, 898);
+            this.btnExitProgram.Name = "btnExitProgram";
+            this.btnExitProgram.Size = new System.Drawing.Size(338, 47);
+            this.btnExitProgram.TabIndex = 17;
+            this.btnExitProgram.Text = "Exit Program";
+            this.btnExitProgram.UseVisualStyleBackColor = false;
             // 
             // frmDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(982, 1055);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(982, 955);
+            this.Controls.Add(this.btnExitProgram);
+            this.Controls.Add(this.btnClearForm);
+            this.Controls.Add(this.lblPanelDataControls);
+            this.Controls.Add(this.pnlDataControls);
             this.Controls.Add(this.lblPanelProduct);
             this.Controls.Add(this.lblInstructions);
             this.Controls.Add(this.pnlProduct);
@@ -692,18 +840,20 @@
             this.pnlTransactions.ResumeLayout(false);
             this.pnlProduct.ResumeLayout(false);
             this.pnlProduct.PerformLayout();
+            this.pnlChamber.ResumeLayout(false);
+            this.pnlChamber.PerformLayout();
+            this.pnlOrchestral.ResumeLayout(false);
+            this.pnlOrchestral.PerformLayout();
+            this.pnlCDClassical.ResumeLayout(false);
+            this.pnlCDClassical.PerformLayout();
             this.pnlDVD.ResumeLayout(false);
             this.pnlDVD.PerformLayout();
             this.pnlBookCIS.ResumeLayout(false);
             this.pnlBookCIS.PerformLayout();
             this.pnlBook.ResumeLayout(false);
             this.pnlBook.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlDataControls.ResumeLayout(false);
+            this.pnlDataControls.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -753,20 +903,31 @@
         private System.Windows.Forms.Label lblReleaseDate;
         private System.Windows.Forms.TextBox txtLeadActors;
         private System.Windows.Forms.Label lblLeadActors;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPanelChamber;
+        private System.Windows.Forms.Panel pnlChamber;
+        private System.Windows.Forms.ComboBox comboInstruments;
+        private System.Windows.Forms.Label lblInstruments;
+        private System.Windows.Forms.Label lblPanelOrchestral;
+        private System.Windows.Forms.Panel pnlOrchestral;
+        private System.Windows.Forms.TextBox txtConductors;
+        private System.Windows.Forms.Label lblConductors;
+        private System.Windows.Forms.Label lblPanelCDClassical;
+        private System.Windows.Forms.Panel pnlCDClassical;
+        private System.Windows.Forms.TextBox txtArtists;
+        private System.Windows.Forms.Label lblArtists;
+        private System.Windows.Forms.TextBox txtLabel;
+        private System.Windows.Forms.Label lblLabel;
+        private System.Windows.Forms.Panel pnlDataControls;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSaveUpdates;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Button btnEnterUPC;
+        private System.Windows.Forms.Label lblDataProcess2;
+        private System.Windows.Forms.Label lblDataProcess1;
+        private System.Windows.Forms.Label lblPanelDataControls;
+        private System.Windows.Forms.Button btnClearForm;
+        private System.Windows.Forms.Button btnExitProgram;
     }
 }
 

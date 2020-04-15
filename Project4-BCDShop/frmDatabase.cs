@@ -75,7 +75,8 @@ namespace Project4_BCDShop
                     btnCreateDVD.Enabled = true;
                     btnCreateCDOrchl.Enabled = true;
                     btnCreateCDChmbr.Enabled = true;
-                    
+                    pnlDataControls.Enabled = true;
+                    lblPanelDataControls.Enabled = true;
                     break;
                 default:
                     MessageBox.Show("Error occured, close the program.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -104,6 +105,28 @@ namespace Project4_BCDShop
                 lblPrice.Enabled = false;
                 lblTitle.Enabled = false;
                 lblQuantity.Enabled = false;
+            }
+        }
+
+        private void toggleDataControls(bool onOrOff)
+        {
+            if (onOrOff == true)
+            {
+                pnlDataControls.Enabled = true;
+                lblPanelDataControls.Enabled = true;
+            }
+            else
+            {
+                pnlDataControls.Enabled = false;
+                lblPanelDataControls.Enabled = false;
+            }
+        }
+
+        private void toggleTransactionButtons(bool onOrOff)
+        {
+            if (onOrOff == true)
+            {
+
             }
         }
     }

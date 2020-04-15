@@ -14,7 +14,6 @@ namespace Project4_BCDShop
     {
 
         String creationStage = "create";
-        
 
         public frmDatabase()
         {
@@ -54,37 +53,39 @@ namespace Project4_BCDShop
                 case "create":
                     creationStage = "save";
                     btnCreateBook.Text = "Save Book";
-                    
-                    toggleTopLevelControls(true);
                     lblPanelBook.Enabled = true;
                     pnlBook.Enabled = true;
-                    btnCreateBookCIS.Enabled = false;
-                    btnCreateDVD.Enabled = false;
-                    btnCreateCDOrchl.Enabled = false;
-                    btnCreateCDChmbr.Enabled = false;
-                    pnlDataControls.Enabled = false;
-                    lblPanelDataControls.Enabled = false;
+
+                    toggleProductControls(true);
+                    toggleDataControls(false);
+                    toggleTransactionButtons(false, sender);
                     break;
+
                 case "save":
                     creationStage = "create";
                     btnCreateBook.Text = "Create Book";
-                    toggleTopLevelControls(false);
                     lblPanelBook.Enabled = false;
                     pnlBook.Enabled = false;
-                    btnCreateBookCIS.Enabled = true;
-                    btnCreateDVD.Enabled = true;
-                    btnCreateCDOrchl.Enabled = true;
-                    btnCreateCDChmbr.Enabled = true;
-                    pnlDataControls.Enabled = true;
-                    lblPanelDataControls.Enabled = true;
+
+                    toggleProductControls(false);
+                    toggleDataControls(true);
+                    toggleTransactionButtons(true, sender);
+
+                    btnClearForm_Click(sender, new EventArgs());
                     break;
+
                 default:
                     MessageBox.Show("Error occured, close the program.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
         }
 
-        private void toggleTopLevelControls(bool onOrOff)
+        /// <summary>
+        /// Toggles the controls on the top of the form that are in the "Product" panel.
+        /// Does not toggle the UPC entrance box.
+        /// </summary>
+        /// <param name="onOrOff"> Set to true to enable, false to disable </param>
+        private void toggleProductControls(bool onOrOff)
         {
             if (onOrOff == true)
             {
@@ -108,6 +109,10 @@ namespace Project4_BCDShop
             }
         }
 
+        /// <summary>
+        /// Toggles the bottom panel and it's label
+        /// </summary>
+        /// <param name="onOrOff"> Set to true to enable, false to disable </param>
         private void toggleDataControls(bool onOrOff)
         {
             if (onOrOff == true)
@@ -122,12 +127,30 @@ namespace Project4_BCDShop
             }
         }
 
-        private void toggleTransactionButtons(bool onOrOff)
+        /// <summary>
+        /// Toggles the transaction choice buttons, but keeps the "sender" button active.
+        /// </summary>
+        /// <param name="onOrOff"></param>
+        /// <param name="sender"></param>
+        private void toggleTransactionButtons(bool onOrOff, object sender)
         {
             if (onOrOff == true)
             {
-
+                btnCreateBook.Enabled = true;
+                btnCreateBookCIS.Enabled = true;
+                btnCreateCDChmbr.Enabled = true;
+                btnCreateCDOrchl.Enabled = true;
+                btnCreateDVD.Enabled = true;
             }
+            else
+            {
+                btnCreateBook.Enabled = false;
+                btnCreateBookCIS.Enabled = false;
+                btnCreateCDChmbr.Enabled = false;
+                btnCreateCDOrchl.Enabled = false;
+                btnCreateDVD.Enabled = false;
+            }
+            ((Button)sender).Enabled = true;
         }
     }
 }

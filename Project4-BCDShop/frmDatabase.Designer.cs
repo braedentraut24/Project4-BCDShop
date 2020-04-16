@@ -54,6 +54,7 @@
             this.comboCISArea = new System.Windows.Forms.ComboBox();
             this.txtISBNRight = new System.Windows.Forms.TextBox();
             this.txtISBNLeft = new System.Windows.Forms.TextBox();
+            this.txtInstruments = new System.Windows.Forms.TextBox();
             this.pnlProduct = new System.Windows.Forms.Panel();
             this.lblPanelChamber = new System.Windows.Forms.Label();
             this.pnlChamber = new System.Windows.Forms.Panel();
@@ -95,7 +96,6 @@
             this.lblPanelDataControls = new System.Windows.Forms.Label();
             this.btnClearForm = new System.Windows.Forms.Button();
             this.btnExitProgram = new System.Windows.Forms.Button();
-            this.txtInstruments = new System.Windows.Forms.TextBox();
             this.pnlTransactions.SuspendLayout();
             this.pnlProduct.SuspendLayout();
             this.pnlChamber.SuspendLayout();
@@ -150,6 +150,7 @@
             this.btnCreateCDChmbr.TabIndex = 4;
             this.btnCreateCDChmbr.Text = "Create CD Chamber";
             this.btnCreateCDChmbr.UseVisualStyleBackColor = true;
+            this.btnCreateCDChmbr.Click += new System.EventHandler(this.btnCreateCDChmbr_Click);
             // 
             // btnCreateCDOrchl
             // 
@@ -160,6 +161,7 @@
             this.btnCreateCDOrchl.TabIndex = 3;
             this.btnCreateCDOrchl.Text = "Create CD Orchestral";
             this.btnCreateCDOrchl.UseVisualStyleBackColor = true;
+            this.btnCreateCDOrchl.Click += new System.EventHandler(this.btnCreateCDOrchl_Click);
             // 
             // btnCreateDVD
             // 
@@ -170,6 +172,7 @@
             this.btnCreateDVD.TabIndex = 2;
             this.btnCreateDVD.Text = "Create DVD";
             this.btnCreateDVD.UseVisualStyleBackColor = true;
+            this.btnCreateDVD.Click += new System.EventHandler(this.btnCreateDVD_Click);
             // 
             // btnCreateBookCIS
             // 
@@ -180,6 +183,7 @@
             this.btnCreateBookCIS.TabIndex = 1;
             this.btnCreateBookCIS.Text = "Create CIS Book";
             this.btnCreateBookCIS.UseVisualStyleBackColor = true;
+            this.btnCreateBookCIS.Click += new System.EventHandler(this.btnCreateBookCIS_Click);
             // 
             // btnCreateBook
             // 
@@ -250,7 +254,7 @@
             // 
             // txtAuthor
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(300, 22);
+            this.txtAuthor.Location = new System.Drawing.Point(305, 22);
             this.txtAuthor.MaxLength = 1000;
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(338, 30);
@@ -354,6 +358,15 @@
             this.txtISBNLeft.Size = new System.Drawing.Size(51, 30);
             this.txtISBNLeft.TabIndex = 15;
             this.tipEnteringData.SetToolTip(this.txtISBNLeft, "This is the \"left side\" of the ISBN.");
+            // 
+            // txtInstruments
+            // 
+            this.txtInstruments.Location = new System.Drawing.Point(5, 44);
+            this.txtInstruments.Name = "txtInstruments";
+            this.txtInstruments.Size = new System.Drawing.Size(406, 30);
+            this.txtInstruments.TabIndex = 27;
+            this.tipEnteringData.SetToolTip(this.txtInstruments, "Enter the names of instruments that played in this CD.\r\nSeparate instrument names" +
+        " with a comma if more than one.");
             // 
             // pnlProduct
             // 
@@ -821,15 +834,6 @@
             this.btnExitProgram.Text = "Exit Program";
             this.btnExitProgram.UseVisualStyleBackColor = false;
             this.btnExitProgram.Click += new System.EventHandler(this.btnExitProgram_Click);
-            // 
-            // txtInstruments
-            // 
-            this.txtInstruments.Location = new System.Drawing.Point(5, 44);
-            this.txtInstruments.Name = "txtInstruments";
-            this.txtInstruments.Size = new System.Drawing.Size(406, 30);
-            this.txtInstruments.TabIndex = 27;
-            this.tipEnteringData.SetToolTip(this.txtInstruments, "Enter the names of instruments that played in this CD.\r\nSeparate instrument names" +
-        " with a comma if more than one.");
             // 
             // frmDatabase
             // 

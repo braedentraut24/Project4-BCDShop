@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Book.cs" />
+    <Compile Include="Classes\CDClassical.cs" />
+    <Compile Include="Classes\DVD.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="frmDatabase.cs">
       <SubType>Form</SubType>

@@ -135,7 +135,7 @@
             this.pnlTransactions.Controls.Add(this.btnCreateBook);
             this.pnlTransactions.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlTransactions.Location = new System.Drawing.Point(8, 66);
-            this.pnlTransactions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTransactions.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTransactions.Name = "pnlTransactions";
             this.pnlTransactions.Size = new System.Drawing.Size(761, 50);
             this.pnlTransactions.TabIndex = 2;
@@ -144,7 +144,7 @@
             // 
             this.btnCreateCDChmbr.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateCDChmbr.Location = new System.Drawing.Point(641, 2);
-            this.btnCreateCDChmbr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateCDChmbr.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateCDChmbr.Name = "btnCreateCDChmbr";
             this.btnCreateCDChmbr.Size = new System.Drawing.Size(112, 44);
             this.btnCreateCDChmbr.TabIndex = 4;
@@ -156,7 +156,7 @@
             // 
             this.btnCreateCDOrchl.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateCDOrchl.Location = new System.Drawing.Point(482, 2);
-            this.btnCreateCDOrchl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateCDOrchl.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateCDOrchl.Name = "btnCreateCDOrchl";
             this.btnCreateCDOrchl.Size = new System.Drawing.Size(116, 44);
             this.btnCreateCDOrchl.TabIndex = 3;
@@ -168,7 +168,7 @@
             // 
             this.btnCreateDVD.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateDVD.Location = new System.Drawing.Point(316, 2);
-            this.btnCreateDVD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateDVD.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateDVD.Name = "btnCreateDVD";
             this.btnCreateDVD.Size = new System.Drawing.Size(116, 44);
             this.btnCreateDVD.TabIndex = 2;
@@ -180,7 +180,7 @@
             // 
             this.btnCreateBookCIS.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateBookCIS.Location = new System.Drawing.Point(154, 2);
-            this.btnCreateBookCIS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateBookCIS.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateBookCIS.Name = "btnCreateBookCIS";
             this.btnCreateBookCIS.Size = new System.Drawing.Size(116, 44);
             this.btnCreateBookCIS.TabIndex = 1;
@@ -192,7 +192,7 @@
             // 
             this.btnCreateBook.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateBook.Location = new System.Drawing.Point(6, 2);
-            this.btnCreateBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateBook.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateBook.Name = "btnCreateBook";
             this.btnCreateBook.Size = new System.Drawing.Size(116, 44);
             this.btnCreateBook.TabIndex = 0;
@@ -214,7 +214,7 @@
             // txtUPC
             // 
             this.txtUPC.Location = new System.Drawing.Point(48, 14);
-            this.txtUPC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUPC.Margin = new System.Windows.Forms.Padding(2);
             this.txtUPC.MaxLength = 5;
             this.txtUPC.Name = "txtUPC";
             this.txtUPC.Size = new System.Drawing.Size(105, 25);
@@ -230,7 +230,7 @@
             // 
             this.txtPrice.Enabled = false;
             this.txtPrice.Location = new System.Drawing.Point(202, 14);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrice.MaxLength = 1000;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(105, 25);
@@ -242,7 +242,7 @@
             // 
             this.txtTitle.Enabled = false;
             this.txtTitle.Location = new System.Drawing.Point(351, 14);
-            this.txtTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitle.MaxLength = 1000;
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(209, 25);
@@ -254,7 +254,7 @@
             // 
             this.txtQuantity.Enabled = false;
             this.txtQuantity.Location = new System.Drawing.Point(632, 16);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantity.MaxLength = 1000;
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(66, 25);
@@ -264,7 +264,7 @@
             // txtAuthor
             // 
             this.txtAuthor.Location = new System.Drawing.Point(244, 18);
-            this.txtAuthor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAuthor.Margin = new System.Windows.Forms.Padding(2);
             this.txtAuthor.MaxLength = 1000;
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(271, 25);
@@ -275,7 +275,7 @@
             // txtPages
             // 
             this.txtPages.Location = new System.Drawing.Point(583, 18);
-            this.txtPages.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPages.Margin = new System.Windows.Forms.Padding(2);
             this.txtPages.MaxLength = 1000;
             this.txtPages.Name = "txtPages";
             this.txtPages.Size = new System.Drawing.Size(66, 25);
@@ -285,7 +285,7 @@
             // txtMins
             // 
             this.txtMins.Location = new System.Drawing.Point(583, 14);
-            this.txtMins.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMins.Margin = new System.Windows.Forms.Padding(2);
             this.txtMins.MaxLength = 1000;
             this.txtMins.Name = "txtMins";
             this.txtMins.Size = new System.Drawing.Size(66, 25);
@@ -295,7 +295,7 @@
             // txtConductor
             // 
             this.txtConductor.Location = new System.Drawing.Point(6, 35);
-            this.txtConductor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConductor.Margin = new System.Windows.Forms.Padding(2);
             this.txtConductor.Name = "txtConductor";
             this.txtConductor.Size = new System.Drawing.Size(293, 25);
             this.txtConductor.TabIndex = 1;
@@ -305,7 +305,7 @@
             // txtArtists
             // 
             this.txtArtists.Location = new System.Drawing.Point(284, 18);
-            this.txtArtists.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtArtists.Margin = new System.Windows.Forms.Padding(2);
             this.txtArtists.Name = "txtArtists";
             this.txtArtists.Size = new System.Drawing.Size(366, 25);
             this.txtArtists.TabIndex = 26;
@@ -315,7 +315,7 @@
             // txtLabel
             // 
             this.txtLabel.Location = new System.Drawing.Point(54, 18);
-            this.txtLabel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLabel.Margin = new System.Windows.Forms.Padding(2);
             this.txtLabel.Name = "txtLabel";
             this.txtLabel.Size = new System.Drawing.Size(169, 25);
             this.txtLabel.TabIndex = 24;
@@ -325,7 +325,7 @@
             // 
             this.dtpReleaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpReleaseDate.Location = new System.Drawing.Point(417, 14);
-            this.dtpReleaseDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpReleaseDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpReleaseDate.MinDate = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
             this.dtpReleaseDate.Name = "dtpReleaseDate";
             this.dtpReleaseDate.Size = new System.Drawing.Size(109, 25);
@@ -336,7 +336,7 @@
             // txtLeadActors
             // 
             this.txtLeadActors.Location = new System.Drawing.Point(96, 14);
-            this.txtLeadActors.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLeadActors.Margin = new System.Windows.Forms.Padding(2);
             this.txtLeadActors.Name = "txtLeadActors";
             this.txtLeadActors.Size = new System.Drawing.Size(223, 25);
             this.txtLeadActors.TabIndex = 20;
@@ -353,7 +353,7 @@
             "Data Structures",
             "Inheritance and Hierarchy"});
             this.comboCISArea.Location = new System.Drawing.Point(81, 11);
-            this.comboCISArea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboCISArea.Margin = new System.Windows.Forms.Padding(2);
             this.comboCISArea.Name = "comboCISArea";
             this.comboCISArea.Size = new System.Drawing.Size(198, 24);
             this.comboCISArea.TabIndex = 21;
@@ -362,7 +362,7 @@
             // txtISBNRight
             // 
             this.txtISBNRight.Location = new System.Drawing.Point(110, 18);
-            this.txtISBNRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtISBNRight.Margin = new System.Windows.Forms.Padding(2);
             this.txtISBNRight.MaxLength = 3;
             this.txtISBNRight.Name = "txtISBNRight";
             this.txtISBNRight.Size = new System.Drawing.Size(42, 25);
@@ -372,7 +372,7 @@
             // txtISBNLeft
             // 
             this.txtISBNLeft.Location = new System.Drawing.Point(47, 18);
-            this.txtISBNLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtISBNLeft.Margin = new System.Windows.Forms.Padding(2);
             this.txtISBNLeft.MaxLength = 3;
             this.txtISBNLeft.Name = "txtISBNLeft";
             this.txtISBNLeft.Size = new System.Drawing.Size(42, 25);
@@ -382,7 +382,7 @@
             // txtInstruments
             // 
             this.txtInstruments.Location = new System.Drawing.Point(4, 35);
-            this.txtInstruments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInstruments.Margin = new System.Windows.Forms.Padding(2);
             this.txtInstruments.Name = "txtInstruments";
             this.txtInstruments.Size = new System.Drawing.Size(326, 25);
             this.txtInstruments.TabIndex = 27;
@@ -414,7 +414,7 @@
             this.pnlProduct.Controls.Add(this.lblUPC);
             this.pnlProduct.Font = new System.Drawing.Font("Gadugi", 10F);
             this.pnlProduct.Location = new System.Drawing.Point(8, 164);
-            this.pnlProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlProduct.Margin = new System.Windows.Forms.Padding(2);
             this.pnlProduct.Name = "pnlProduct";
             this.pnlProduct.Size = new System.Drawing.Size(761, 405);
             this.pnlProduct.TabIndex = 5;
@@ -439,7 +439,7 @@
             this.pnlChamber.Controls.Add(this.lblInstruments);
             this.pnlChamber.Enabled = false;
             this.pnlChamber.Location = new System.Drawing.Point(368, 313);
-            this.pnlChamber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlChamber.Margin = new System.Windows.Forms.Padding(2);
             this.pnlChamber.Name = "pnlChamber";
             this.pnlChamber.Size = new System.Drawing.Size(339, 68);
             this.pnlChamber.TabIndex = 21;
@@ -474,7 +474,7 @@
             this.pnlOrchestral.Controls.Add(this.lblConductor);
             this.pnlOrchestral.Enabled = false;
             this.pnlOrchestral.Location = new System.Drawing.Point(48, 313);
-            this.pnlOrchestral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlOrchestral.Margin = new System.Windows.Forms.Padding(2);
             this.pnlOrchestral.Name = "pnlOrchestral";
             this.pnlOrchestral.Size = new System.Drawing.Size(307, 68);
             this.pnlOrchestral.TabIndex = 20;
@@ -511,7 +511,7 @@
             this.pnlCDClassical.Controls.Add(this.lblLabel);
             this.pnlCDClassical.Enabled = false;
             this.pnlCDClassical.Location = new System.Drawing.Point(48, 242);
-            this.pnlCDClassical.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCDClassical.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCDClassical.Name = "pnlCDClassical";
             this.pnlCDClassical.Size = new System.Drawing.Size(659, 52);
             this.pnlCDClassical.TabIndex = 18;
@@ -560,7 +560,7 @@
             this.pnlDVD.Controls.Add(this.lblLeadActors);
             this.pnlDVD.Enabled = false;
             this.pnlDVD.Location = new System.Drawing.Point(48, 177);
-            this.pnlDVD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDVD.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDVD.Name = "pnlDVD";
             this.pnlDVD.Size = new System.Drawing.Size(659, 44);
             this.pnlDVD.TabIndex = 16;
@@ -616,7 +616,7 @@
             this.pnlBookCIS.Controls.Add(this.lblCISArea);
             this.pnlBookCIS.Enabled = false;
             this.pnlBookCIS.Location = new System.Drawing.Point(88, 118);
-            this.pnlBookCIS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlBookCIS.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBookCIS.Name = "pnlBookCIS";
             this.pnlBookCIS.Size = new System.Drawing.Size(619, 40);
             this.pnlBookCIS.TabIndex = 14;
@@ -658,7 +658,7 @@
             this.pnlBook.Controls.Add(this.lblISBN);
             this.pnlBook.Enabled = false;
             this.pnlBook.Location = new System.Drawing.Point(48, 56);
-            this.pnlBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlBook.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBook.Name = "pnlBook";
             this.pnlBook.Size = new System.Drawing.Size(659, 48);
             this.pnlBook.TabIndex = 12;
@@ -775,7 +775,7 @@
             this.pnlDataControls.Controls.Add(this.lblDataProcess2);
             this.pnlDataControls.Controls.Add(this.lblDataProcess1);
             this.pnlDataControls.Location = new System.Drawing.Point(8, 586);
-            this.pnlDataControls.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDataControls.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDataControls.Name = "pnlDataControls";
             this.pnlDataControls.Size = new System.Drawing.Size(761, 105);
             this.pnlDataControls.TabIndex = 7;
@@ -786,7 +786,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(632, 58);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(116, 38);
             this.btnDelete.TabIndex = 15;
@@ -796,7 +796,7 @@
             // btnSaveUpdates
             // 
             this.btnSaveUpdates.Location = new System.Drawing.Point(482, 58);
-            this.btnSaveUpdates.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaveUpdates.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveUpdates.Name = "btnSaveUpdates";
             this.btnSaveUpdates.Size = new System.Drawing.Size(116, 38);
             this.btnSaveUpdates.TabIndex = 14;
@@ -806,7 +806,7 @@
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(323, 58);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(116, 38);
             this.btnEdit.TabIndex = 13;
@@ -816,7 +816,7 @@
             // btnFind
             // 
             this.btnFind.Location = new System.Drawing.Point(160, 58);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(2);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(116, 38);
             this.btnFind.TabIndex = 12;
@@ -828,7 +828,7 @@
             this.btnEnterUPC.BackColor = System.Drawing.Color.ForestGreen;
             this.btnEnterUPC.ForeColor = System.Drawing.Color.White;
             this.btnEnterUPC.Location = new System.Drawing.Point(6, 58);
-            this.btnEnterUPC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEnterUPC.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnterUPC.Name = "btnEnterUPC";
             this.btnEnterUPC.Size = new System.Drawing.Size(116, 38);
             this.btnEnterUPC.TabIndex = 11;
@@ -875,7 +875,7 @@
             this.btnClearForm.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearForm.ForeColor = System.Drawing.Color.White;
             this.btnClearForm.Location = new System.Drawing.Point(8, 696);
-            this.btnClearForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClearForm.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearForm.Name = "btnClearForm";
             this.btnClearForm.Size = new System.Drawing.Size(270, 38);
             this.btnClearForm.TabIndex = 16;
@@ -889,7 +889,7 @@
             this.btnExitProgram.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExitProgram.ForeColor = System.Drawing.Color.White;
             this.btnExitProgram.Location = new System.Drawing.Point(498, 696);
-            this.btnExitProgram.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExitProgram.Margin = new System.Windows.Forms.Padding(2);
             this.btnExitProgram.Name = "btnExitProgram";
             this.btnExitProgram.Size = new System.Drawing.Size(270, 38);
             this.btnExitProgram.TabIndex = 17;
@@ -967,7 +967,6 @@
         private System.Windows.Forms.Label lblISBN;
         private System.Windows.Forms.Label lblPanelBookCIS;
         private System.Windows.Forms.Panel pnlBookCIS;
-        private System.Windows.Forms.ComboBox comboCISArea;
         private System.Windows.Forms.Label lblCISArea;
         internal System.Windows.Forms.TextBox txtPages;
         private System.Windows.Forms.Label lblPages;
@@ -1009,6 +1008,7 @@
         private System.Windows.Forms.Button btnExitProgram;
         internal System.Windows.Forms.TextBox txtInstruments;
         internal System.Windows.Forms.DateTimePicker dtpReleaseDate;
+        internal System.Windows.Forms.ComboBox comboCISArea;
     }
 }
 

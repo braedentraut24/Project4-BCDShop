@@ -53,6 +53,7 @@
     <Compile Include="Classes\CDOrchestra.cs" />
     <Compile Include="Classes\DVD.cs" />
     <Compile Include="Classes\Product.cs" />
+    <Compile Include="Classes\ProductDB.cs" />
     <Compile Include="frmDatabase.cs">
       <SubType>Form</SubType>
     </Compile>

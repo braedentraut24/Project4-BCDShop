@@ -1,22 +1,18 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
+﻿using System;
 using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace BookCDDVDShop.Classes
 {
-    class ProductDB
+    internal class ProductDB
     {
-        string dbProductType = "";  // type of record found in data base: Book, BookCIS, CDChamber, CDOrchestra, DVD
-        string dbStringProduct = "";
-        string fieldsFound = "";
+        private string dbProductType = "";  // type of record found in data base: Book, BookCIS, CDChamber, CDOrchestra, DVD
+        private string dbStringProduct = "";
+        private string fieldsFound = "";
 
         // Connection string for ProductDB (type: Microsoft Access) in the Resources folder
-        string strConnection = "provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=../Debug/ProductDB.accdb";
+        private string strConnection = "provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=../Debug/ProductDB.accdb";
+
         //string strConnection = "provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source= " +
         //    "L:\\ALL MY DATA\\Frank's Syllabus\\AAA CIS 3309 CSharp F19-S20\\CIS 3309 All Projects 2019-20\\BookCDDVD Project (adapted Jupin) DB Version\\ProductDB.accdb";
 
@@ -57,9 +53,7 @@ namespace BookCDDVDShop.Classes
             {
                 myConnection.Close();
             }
-
         }  // end InsertProduct
-
 
         // 2 Inserts a new record into Book table with parameters UPC and ISBN, Author, Pages
         public bool InsertBook(int UPC, int ISBN, string author, int pages)
@@ -88,9 +82,7 @@ namespace BookCDDVDShop.Classes
             {
                 myConnection.Close();
             }
-
         }  // end InsertBook
-
 
         // 3 Inserts a new record into BookCIS table with parameters UPC and CISArea
         public bool InsertBookCIS(int UPC, string CISArea)
@@ -119,9 +111,7 @@ namespace BookCDDVDShop.Classes
             {
                 myConnection.Close();
             }
-
         }  // end InsertBookCIS
-
 
         // 4 Inserts a new record into DVD table with parameters UPC and Lead Actor, Release Date and Run Time
         public bool InsertDVD(int UPC, string lead, DateTime relDate, int runTime)
@@ -150,12 +140,9 @@ namespace BookCDDVDShop.Classes
             {
                 myConnection.Close();
             }
-
         }  // end InsertDVD
 
-
-
-        // 5 Inserts a new record into CDClassical table with parameters ProductUPC and 
+        // 5 Inserts a new record into CDClassical table with parameters ProductUPC and
         //     CDClassical Label and CDClassical Artists
         public bool InsertCDClassical(int UPC, string label, string artists)
         {
@@ -182,10 +169,7 @@ namespace BookCDDVDShop.Classes
             {
                 myConnection.Close();
             }
-
         }  // end InsertCDClassical
-
-
 
         // 6 Inserts a new record into CD Chamber Music table with parameters ProductUPC and InstrumentList
         public bool InsertCDChamber(int UPC, string instrumentList)
@@ -213,9 +197,7 @@ namespace BookCDDVDShop.Classes
             {
                 myConnection.Close();
             }
-
         }  // end InsertCDChamber
-
 
         // 7 Inserts a new record into CDOrchestra table with parameters ProductUPC and Conductor
         public bool InsertCDOrchestra(int UPC, string Conductor)
@@ -247,9 +229,7 @@ namespace BookCDDVDShop.Classes
 
         // ********** End of INSERT methods **********
 
-
-
-        // ********** SELECT (Query) Methods ********** 
+        // ********** SELECT (Query) Methods **********
         // 1 Queries/Selects records from all tables that match integer parameter ProductUPC
         // Returns a reference to the retrieved record
 
@@ -288,10 +268,8 @@ namespace BookCDDVDShop.Classes
             return myDataReader;
         }  // end SelectProduct
 
-
-
         // 1 Queries/selects records from Product table that match integer parameter ProductUPC
-        // Returns a reference to the retrieved record AND a Success flag AND a String containing 
+        // Returns a reference to the retrieved record AND a Success flag AND a String containing
         //     substrings representing all the fields in a Product.
         public OleDbDataReader SelectProductFromProduct(int ProductUPC,
             out bool OKFlag, out string fieldsOut)
@@ -362,16 +340,13 @@ namespace BookCDDVDShop.Classes
             return myDataReader;
         } // end SelectProductFromProduct
 
-
         public string getProductType()
         {
             return dbProductType;
         }
 
-
-
         // 2 Queries/selects records from Book table that match integer parameter ProductUPC
-        // Returns a reference to the retrieved record AND a Success flag AND a String containing 
+        // Returns a reference to the retrieved record AND a Success flag AND a String containing
         //     substrings representing all the fields in a Book record.
 
         public OleDbDataReader SelectProductFromBook(int ProductUPC,
@@ -422,10 +397,8 @@ namespace BookCDDVDShop.Classes
             return myDataReader;
         }  // end SelectProductFromBook
 
-
-
         // 3 Queries/selects records from CDClassical table that match integer parameter ProductUPC
-        // Returns a reference to the retrieved record AND a Success flag AND a String containing 
+        // Returns a reference to the retrieved record AND a Success flag AND a String containing
         //     substrings representing all the fields in a CDClassical record.
 
         public OleDbDataReader SelectProductFromCDClassical(int ProductUPC,
@@ -476,10 +449,8 @@ namespace BookCDDVDShop.Classes
             return myDataReader;
         }  // end SelectProductFromCDClassical
 
-
-
         // 4 Queries/selects records from CDChamber table that match integer parameter ProductUPC
-        // Returns a reference to the retrieved record AND a Success flag AND a String containing 
+        // Returns a reference to the retrieved record AND a Success flag AND a String containing
         //     substrings representing all the fields in a CDChamber record.
 
         public OleDbDataReader SelectProductFromCDChamber(int ProductUPC,
@@ -531,10 +502,8 @@ namespace BookCDDVDShop.Classes
             return myDataReader;
         } // end SelectProductFromCDChamber
 
-
-
         // 5 Queries/selects records from CDOrchestra table that match integer parameter ProductUPC
-        // Returns a reference to the retrieved record AND a Success flag AND a String containing 
+        // Returns a reference to the retrieved record AND a Success flag AND a String containing
         //     substrings representing all the fields in a CDOrchestra record.
 
         public OleDbDataReader SelectProductFromCDOrchestra(int ProductUPC,
@@ -585,10 +554,8 @@ namespace BookCDDVDShop.Classes
             return myDataReader;
         } // end SelectProductFromCDOrchestra
 
-
-
         // 6 Queries/selects records from DVD table that match integer parameter ProductUPC
-        // Returns a reference to the retrieved record AND a Success flag AND a String containing 
+        // Returns a reference to the retrieved record AND a Success flag AND a String containing
         //     substrings representing all the fields in a DVD record.
 
         public OleDbDataReader SelectProductFromDVD(int ProductUPC,
@@ -640,10 +607,8 @@ namespace BookCDDVDShop.Classes
             return myDataReader;
         } // end SelectProductFromDVD
 
-
-
         // 7 Queries/selects records from BookCIS table that match integer parameter ProductUPC
-        // Returns a reference to the retrieved record AND a Success flag AND a String containing 
+        // Returns a reference to the retrieved record AND a Success flag AND a String containing
         //     substrings representing all the fields in a BookCIS record.
 
         public OleDbDataReader SelectProductFromBookCIS(int ProductUPC,
@@ -696,9 +661,7 @@ namespace BookCDDVDShop.Classes
 
         // ********** End of SELECT methods **********
 
-
-
-        // ********** UPDATE Methods ********** 
+        // ********** UPDATE Methods **********
 
         // Updates records from Product, Book, CDClassical, UndergraduateCDClassical and GraduateCDClassical tables that match integer parameter ProductUPC
 
@@ -727,8 +690,6 @@ namespace BookCDDVDShop.Classes
             return true; // returns true if Update was successful
         }  // end UpdateProduct
 
-
-
         // 2 Updates record from Book table that match integer parameter ProductUPC
         public bool UpdateBook(int UPC, int ISBN, string author, int pages)
         {
@@ -755,7 +716,6 @@ namespace BookCDDVDShop.Classes
             return true; // returns true if Update was successful
         }  // end Update Book
 
-
         // 3 Updates record from BookCIS table that match integer parameter ProductUPC
         public bool UpdateBookCIS(int UPC, string CISArea)
         {
@@ -780,8 +740,6 @@ namespace BookCDDVDShop.Classes
 
             return true; // returns true if Update was successful
         }  // end Update BookCIS
-
-
 
         // 4 Updates record from DVD table that match integer parameter ProductUPC
         public bool UpdateDVD(int UPC, string leadActor, DateTime releaseDate, int runTime)
@@ -835,8 +793,6 @@ namespace BookCDDVDShop.Classes
             return true; // returns true if Update was successful
         }  // end UpdateCDClassical
 
-
-
         // 6 Updates records from CDChamber table that match integer parameter ProductUPC
         public bool UpdateCDChamber(int UPC, string instrumentList)
         {
@@ -862,7 +818,6 @@ namespace BookCDDVDShop.Classes
 
             return true; // returns true if Update was successful
         } // end UpdateCDChamber
-
 
         // 7 Updates records from CDOrchestra table that match integer parameter ProductUPC
         public bool UpdateCDOrchestra(int UPC, string conductor)
@@ -890,17 +845,12 @@ namespace BookCDDVDShop.Classes
             return true; // returns true if Update was successful
         } // end UpdateCDOrchestra
 
-
-
-
         // ********** End of UPDATE methods **********
 
         // ********** End edits
 
-
-
-        // ********** DELETE Method ********** 
-        // Deletes records all tables that have a matching ProductUPC 
+        // ********** DELETE Method **********
+        // Deletes records all tables that have a matching ProductUPC
 
         // Uses strConnection to open a connection with the database
         // Deletes Product with given ID from every table in the database
@@ -956,4 +906,3 @@ namespace BookCDDVDShop.Classes
         }  // end Delete
     } // end of Product class
 } // end Namespace
-

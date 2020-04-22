@@ -62,6 +62,7 @@ namespace Project4_BCDShop
                     break;
 
                 case "save":
+
                     creationStage = "create";
                     btnCreateBook.Text = "Create Book";
                     lblPanelBook.Enabled = false;
@@ -164,6 +165,7 @@ namespace Project4_BCDShop
                     lblPanelBook.Enabled = true;
                     pnlBookCIS.Enabled = true;
                     lblPanelBookCIS.Enabled = true;
+                    comboCISArea.Text = "Test";
 
                     toggleTransactionButtons(false, sender);
                     toggleProductControls(true);
@@ -288,5 +290,6 @@ namespace Project4_BCDShop
                     break;
             }
         }
+
     }
 }

@@ -345,7 +345,8 @@
             // 
             // comboCISArea
             // 
-            this.comboCISArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboCISArea.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboCISArea.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboCISArea.FormattingEnabled = true;
             this.comboCISArea.Items.AddRange(new object[] {
             "Algorithms",

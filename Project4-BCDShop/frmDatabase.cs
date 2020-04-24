@@ -76,6 +76,7 @@ namespace Project4_BCDShop
 
                     string fullISBN = txtISBNLeft.Text + txtISBNRight.Text;
 
+
                     dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
                     txtTitle.Text, Convert.ToInt32(txtQuantity.Text), "Book");
                     dbFunctions.InsertBook(Convert.ToInt32(txtUPC.Text), Convert.ToInt32(fullISBN), txtAuthor.Text, Convert.ToInt32(txtPages.Text));

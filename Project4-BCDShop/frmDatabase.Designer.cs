@@ -835,6 +835,7 @@
             this.btnEnterUPC.TabIndex = 11;
             this.btnEnterUPC.Text = "Enter UPC";
             this.btnEnterUPC.UseVisualStyleBackColor = false;
+            this.btnEnterUPC.Click += new System.EventHandler(this.btnEnterUPC_Click);
             // 
             // lblDataProcess2
             // 

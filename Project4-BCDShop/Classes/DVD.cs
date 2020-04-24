@@ -14,7 +14,7 @@ namespace Project4_BCDShop.Classes
         private DateTime hiddenReleaseDate;
 
         public DVD(int UPC, decimal price, string title, int quantity,
-            int runTime, string actors, DateTime releaseDate) : base(UPC, price, title, quantity)
+            string actors, DateTime releaseDate, int runTime) : base(UPC, price, title, quantity)
         {
             this.hiddenRunTime = runTime;
             this.hiddenActors = actors;

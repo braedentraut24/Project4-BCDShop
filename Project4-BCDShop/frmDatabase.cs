@@ -12,6 +12,7 @@ namespace Project4_BCDShop
 {
     public partial class frmDatabase : Form
     {
+        Classes.ProductDB dbFunctions = new Classes.ProductDB();
 
         String creationStage = "create";
 
@@ -72,7 +73,17 @@ namespace Project4_BCDShop
                     toggleDataControls(true);
                     toggleTransactionButtons(true, sender);
 
+                    string fullISBN = txtISBNLeft.Text + txtISBNRight.Text;
+
+                    dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), "Book");
+                    dbFunctions.InsertBook(Convert.ToInt32(txtUPC.Text), Convert.ToInt32(fullISBN), txtAuthor.Text, Convert.ToInt32(txtPages.Text));
+
                     btnClearForm_Click(sender, new EventArgs());
+
+                    
+
+
                     break;
 
                 default:
@@ -290,6 +301,41 @@ namespace Project4_BCDShop
                     break;
             }
         }
+
+        // Validate Product data
+        private bool ValidateProduct()
+        {
+            if (Validators.ValidateProductUPC(txtUPC.Text) == false)
+            {
+                txtUPC.Text = "";
+                txtUPC.Focus();
+                MessageBox.Show("Product UPC not valid. Please check that all data is entered and valid.");
+                return false;
+            }  // end if
+            if (Validators.ValidateProductPrice(txtPrice.Text) == false)
+            {
+                txtPrice.Text = "";
+                txtPrice.Focus();
+                MessageBox.Show("Product Price not valid.  Please check that all data is entered and valid.");
+                return false;
+            }  // end if
+            if (Validators.ValidateProductTitle(txtTitle.Text) == false)
+            {
+                txtTitle.Text = "";
+                txtTitle.Focus();
+                MessageBox.Show("Product Title not valid.  Please check that all data is entered and valid.");
+                return false;
+            }  // end if
+            if (Validators.ValidateProductQuantity(txtQuantity.Text) == false)
+            {
+                txtQuantity.Text = "";
+                txtQuantity.Focus();
+                MessageBox.Show("Product Quantity not valid.  Please check that all data is entered and valid.");
+                return false;
+            }  // end if
+            return true;
+        }   // end Validate Product data
+
 
     }
 }

@@ -8,3 +8,22 @@ C:\Users\braed\source\repos\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4
 C:\Users\braed\source\repos\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4-BCDShop.csproj.CoreCompileInputs.cache
 C:\Users\braed\source\repos\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4-BCDShop.exe
 C:\Users\braed\source\repos\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4-BCDShop.pdb
+C:\Users\Braeden\Source\Repos\braedentraut24\Project4-BCDShop\Project4-BCDShop\bin\Debug\Project4-BCDShop.exe.config
+C:\Users\Braeden\Source\Repos\braedentraut24\Project4-BCDShop\Project4-BCDShop\bin\Debug\Project4-BCDShop.exe
+C:\Users\Braeden\Source\Repos\braedentraut24\Project4-BCDShop\Project4-BCDShop\bin\Debug\Project4-BCDShop.pdb
+C:\Users\Braeden\Source\Repos\braedentraut24\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4-BCDShop.csprojAssemblyReference.cache
+C:\Users\Braeden\Source\Repos\braedentraut24\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4_BCDShop.frmDatabase.resources
+C:\Users\Braeden\Source\Repos\braedentraut24\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4_BCDShop.Properties.Resources.resources
+C:\Users\Braeden\Source\Repos\braedentraut24\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4-BCDShop.csproj.GenerateResource.cache
+C:\Users\Braeden\Source\Repos\braedentraut24\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4-BCDShop.csproj.CoreCompileInputs.cache
+C:\Users\Braeden\Source\Repos\braedentraut24\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4-BCDShop.exe
+C:\Users\Braeden\Source\Repos\braedentraut24\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4-BCDShop.pdb
+D:\OneDrive - Temple University\SP20\Homework\softwareDesign\Project4-BCDShop\Project4-BCDShop\bin\Debug\Project4-BCDShop.exe.config
+D:\OneDrive - Temple University\SP20\Homework\softwareDesign\Project4-BCDShop\Project4-BCDShop\bin\Debug\Project4-BCDShop.exe
+D:\OneDrive - Temple University\SP20\Homework\softwareDesign\Project4-BCDShop\Project4-BCDShop\bin\Debug\Project4-BCDShop.pdb
+D:\OneDrive - Temple University\SP20\Homework\softwareDesign\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4-BCDShop.csprojAssemblyReference.cache
+D:\OneDrive - Temple University\SP20\Homework\softwareDesign\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4_BCDShop.frmDatabase.resources
+D:\OneDrive - Temple University\SP20\Homework\softwareDesign\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4_BCDShop.Properties.Resources.resources
+D:\OneDrive - Temple University\SP20\Homework\softwareDesign\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4-BCDShop.csproj.GenerateResource.cache
+D:\OneDrive - Temple University\SP20\Homework\softwareDesign\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4-BCDShop.exe
+D:\OneDrive - Temple University\SP20\Homework\softwareDesign\Project4-BCDShop\Project4-BCDShop\obj\Debug\Project4-BCDShop.pdb

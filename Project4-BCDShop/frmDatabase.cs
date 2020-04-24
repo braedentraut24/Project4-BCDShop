@@ -1,11 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace Project4_BCDShop
 {
     public partial class frmDatabase : Form
     {
-        private String creationStage = "create";
+        Classes.ProductDB dbFunctions = new Classes.ProductDB();
+
+        String creationStage = "create";
 
         public frmDatabase()
         {
@@ -13,9 +23,11 @@ namespace Project4_BCDShop
             dtpReleaseDate.MaxDate = DateTime.Now;
         }
 
-        /// <summary>
-        /// Clears all of the text boxes in the form
-        /// </summary>
+        private void btnExitProgram_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnClearForm_Click(object sender, EventArgs e)
         {
             txtUPC.Text = "";
@@ -33,6 +45,7 @@ namespace Project4_BCDShop
             txtArtists.Text = "";
             txtConductor.Text = "";
             txtInstruments.Text = "";
+
         }
 
         private void btnCreateBook_Click(object sender, EventArgs e)
@@ -51,6 +64,7 @@ namespace Project4_BCDShop
                     break;
 
                 case "save":
+
                     creationStage = "create";
                     btnCreateBook.Text = "Create Book";
                     lblPanelBook.Enabled = false;
@@ -60,179 +74,23 @@ namespace Project4_BCDShop
                     toggleDataControls(true);
                     toggleTransactionButtons(true, sender);
 
+                    string fullISBN = txtISBNLeft.Text + txtISBNRight.Text;
+
+
+                    dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), "Book");
+                    dbFunctions.InsertBook(Convert.ToInt32(txtUPC.Text), Convert.ToInt32(fullISBN), txtAuthor.Text, Convert.ToInt32(txtPages.Text));
+
                     btnClearForm_Click(sender, new EventArgs());
+
+                    
+
+
                     break;
 
                 default:
                     MessageBox.Show("Error occured, close the program.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
-            }
-        }
-
-        private void btnCreateBookCIS_Click(object sender, EventArgs e)
-        {
-            switch (creationStage)
-            {
-                case "create":
-                    creationStage = "save";
-                    btnCreateBookCIS.Text = "Save Book CIS";
-                    pnlBook.Enabled = true;
-                    lblPanelBook.Enabled = true;
-                    pnlBookCIS.Enabled = true;
-                    lblPanelBookCIS.Enabled = true;
-
-                    toggleTransactionButtons(false, sender);
-                    toggleProductControls(true);
-                    toggleDataControls(false);
-                    break;
-
-                case "save":
-                    creationStage = "create";
-                    btnCreateBookCIS.Text = "Create Book CIS";
-                    pnlBook.Enabled = false;
-                    pnlBookCIS.Enabled = false;
-                    lblPanelBook.Enabled = false;
-                    lblPanelBookCIS.Enabled = false;
-
-                    btnClearForm_Click(sender, new EventArgs());
-                    toggleDataControls(true);
-                    toggleProductControls(false);
-                    toggleTransactionButtons(true, sender);
-                    break;
-
-                default:
-                    MessageBox.Show("Error occured, close the program.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-            }
-        }
-
-        private void btnCreateCDChmbr_Click(object sender, EventArgs e)
-        {
-            switch (creationStage)
-            {
-                case "create":
-                    creationStage = "save";
-                    btnCreateCDChmbr.Text = "Save CD Chamber";
-                    pnlCDClassical.Enabled = true;
-                    pnlChamber.Enabled = true;
-                    lblPanelCDClassical.Enabled = true;
-                    lblPanelChamber.Enabled = true;
-
-                    toggleProductControls(true);
-                    toggleTransactionButtons(false, sender);
-                    toggleDataControls(false);
-                    break;
-
-                case "save":
-                    creationStage = "create";
-                    btnCreateCDChmbr.Text = "Create CD Chamber";
-                    pnlCDClassical.Enabled = false;
-                    pnlChamber.Enabled = false;
-                    lblPanelCDClassical.Enabled = false;
-                    lblPanelChamber.Enabled = false;
-
-                    toggleProductControls(false);
-                    toggleTransactionButtons(true, sender);
-                    toggleDataControls(true);
-                    btnClearForm_Click(sender, new EventArgs());
-                    break;
-
-                default:
-                    MessageBox.Show("Error occured, close the program.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-            }
-        }
-
-        private void btnCreateCDOrchl_Click(object sender, EventArgs e)
-        {
-            switch (creationStage)
-            {
-                case "create":
-                    creationStage = "save";
-                    btnCreateCDOrchl.Text = "Save CD Orchestral";
-                    pnlCDClassical.Enabled = true;
-                    pnlOrchestral.Enabled = true;
-                    lblPanelCDClassical.Enabled = true;
-                    lblPanelOrchestral.Enabled = true;
-
-                    toggleProductControls(true);
-                    toggleTransactionButtons(false, sender);
-                    toggleDataControls(false);
-                    break;
-
-                case "save":
-                    creationStage = "create";
-                    btnCreateCDOrchl.Text = "Create CD Orchestral";
-                    pnlCDClassical.Enabled = false;
-                    pnlOrchestral.Enabled = false;
-                    lblPanelCDClassical.Enabled = false;
-                    lblPanelOrchestral.Enabled = false;
-
-                    toggleProductControls(false);
-                    toggleTransactionButtons(true, sender);
-                    toggleDataControls(true);
-                    btnClearForm_Click(sender, new EventArgs());
-                    break;
-
-                default:
-                    MessageBox.Show("Error occured, close the program.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-            }
-        }
-
-        private void btnCreateDVD_Click(object sender, EventArgs e)
-        {
-            switch (creationStage)
-            {
-                case "create":
-                    creationStage = "save";
-                    btnCreateDVD.Text = "Save DVD";
-                    pnlDVD.Enabled = true;
-                    lblPanelDVD.Enabled = true;
-
-                    toggleProductControls(true);
-                    toggleDataControls(false);
-                    toggleTransactionButtons(false, sender);
-                    break;
-
-                case "save":
-                    creationStage = "create";
-                    btnCreateDVD.Text = "Create DVD";
-                    pnlDVD.Enabled = false;
-                    lblPanelDVD.Enabled = false;
-
-                    toggleProductControls(false);
-                    toggleDataControls(true);
-                    toggleTransactionButtons(true, sender);
-                    btnClearForm_Click(sender, new EventArgs());
-                    break;
-
-                default:
-                    MessageBox.Show("Error occured, close the program.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-            }
-        }
-
-        private void btnExitProgram_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        /// <summary>
-        /// Toggles the bottom panel and it's label
-        /// </summary>
-        /// <param name="onOrOff"> Set to true to enable, false to disable </param>
-        private void toggleDataControls(bool onOrOff)
-        {
-            if (onOrOff == true)
-            {
-                pnlDataControls.Enabled = true;
-                lblPanelDataControls.Enabled = true;
-            }
-            else
-            {
-                pnlDataControls.Enabled = false;
-                lblPanelDataControls.Enabled = false;
             }
         }
 
@@ -266,6 +124,24 @@ namespace Project4_BCDShop
         }
 
         /// <summary>
+        /// Toggles the bottom panel and it's label
+        /// </summary>
+        /// <param name="onOrOff"> Set to true to enable, false to disable </param>
+        private void toggleDataControls(bool onOrOff)
+        {
+            if (onOrOff == true)
+            {
+                pnlDataControls.Enabled = true;
+                lblPanelDataControls.Enabled = true;
+            }
+            else
+            {
+                pnlDataControls.Enabled = false;
+                lblPanelDataControls.Enabled = false;
+            }
+        }
+
+        /// <summary>
         /// Toggles the transaction choice buttons, but keeps the "sender" button active.
         /// </summary>
         /// <param name="onOrOff"> Set to true to enable, false to disable. </param>
@@ -289,6 +165,236 @@ namespace Project4_BCDShop
                 btnCreateDVD.Enabled = false;
             }
             ((Button)sender).Enabled = true;
+        }
+
+        private void btnCreateBookCIS_Click(object sender, EventArgs e)
+        {
+            switch (creationStage)
+            {
+                case "create":
+                    creationStage = "save";
+                    btnCreateBookCIS.Text = "Save Book CIS";
+                    pnlBook.Enabled = true;
+                    lblPanelBook.Enabled = true;
+                    pnlBookCIS.Enabled = true;
+                    lblPanelBookCIS.Enabled = true;
+                    comboCISArea.Text = "Test";
+
+                    toggleTransactionButtons(false, sender);
+                    toggleProductControls(true);
+                    toggleDataControls(false);
+                    break;
+                case "save":
+                    creationStage = "create";
+                    btnCreateBookCIS.Text = "Create Book CIS";
+                    pnlBook.Enabled = false;
+                    pnlBookCIS.Enabled = false;
+                    lblPanelBook.Enabled = false;
+                    lblPanelBookCIS.Enabled = false;
+
+                    btnClearForm_Click(sender, new EventArgs());
+                    toggleDataControls(true);
+                    toggleProductControls(false);
+                    toggleTransactionButtons(true, sender);
+                    break;
+                default:
+                    MessageBox.Show("Error occured, close the program.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
+        }
+
+        private void btnCreateDVD_Click(object sender, EventArgs e)
+        {
+            switch (creationStage)
+            {
+                case "create":
+                    creationStage = "save";
+                    btnCreateDVD.Text = "Save DVD";
+                    pnlDVD.Enabled = true;
+                    lblPanelDVD.Enabled = true;
+
+                    toggleProductControls(true);
+                    toggleDataControls(false);
+                    toggleTransactionButtons(false, sender);
+                    break;
+                case "save":
+                    creationStage = "create";
+                    btnCreateDVD.Text = "Create DVD";
+                    pnlDVD.Enabled = false;
+                    lblPanelDVD.Enabled = false;
+
+                    toggleProductControls(false);
+                    toggleDataControls(true);
+                    toggleTransactionButtons(true, sender);
+                    btnClearForm_Click(sender, new EventArgs());
+                    break;
+                default:
+                    MessageBox.Show("Error occured, close the program.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
+        }
+
+        private void btnCreateCDOrchl_Click(object sender, EventArgs e)
+        {
+            switch (creationStage)
+            {
+                case "create":
+                    creationStage = "save";
+                    btnCreateCDOrchl.Text = "Save CD Orchestral";
+                    pnlCDClassical.Enabled = true;
+                    pnlOrchestral.Enabled = true;
+                    lblPanelCDClassical.Enabled = true;
+                    lblPanelOrchestral.Enabled = true;
+
+                    toggleProductControls(true);
+                    toggleTransactionButtons(false, sender);
+                    toggleDataControls(false);
+                    break;
+                case "save":
+                    creationStage = "create";
+                    btnCreateCDOrchl.Text = "Create CD Orchestral";
+                    pnlCDClassical.Enabled = false;
+                    pnlOrchestral.Enabled = false;
+                    lblPanelCDClassical.Enabled = false;
+                    lblPanelOrchestral.Enabled = false;
+
+                    toggleProductControls(false);
+                    toggleTransactionButtons(true, sender);
+                    toggleDataControls(true);
+                    btnClearForm_Click(sender, new EventArgs());
+                    break;
+                default:
+                    MessageBox.Show("Error occured, close the program.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
+        }
+
+        private void btnCreateCDChmbr_Click(object sender, EventArgs e)
+        {
+            switch (creationStage)
+            {
+                case "create":
+                    creationStage = "save";
+                    btnCreateCDChmbr.Text = "Save CD Chamber";
+                    pnlCDClassical.Enabled = true;
+                    pnlChamber.Enabled = true;
+                    lblPanelCDClassical.Enabled = true;
+                    lblPanelChamber.Enabled = true;
+
+                    toggleProductControls(true);
+                    toggleTransactionButtons(false, sender);
+                    toggleDataControls(false);
+                    break;
+                case "save":
+                    creationStage = "create";
+                    btnCreateCDChmbr.Text = "Create CD Chamber";
+                    pnlCDClassical.Enabled = false;
+                    pnlChamber.Enabled = false;
+                    lblPanelCDClassical.Enabled = false;
+                    lblPanelChamber.Enabled = false;
+
+                    toggleProductControls(false);
+                    toggleTransactionButtons(true, sender);
+                    toggleDataControls(true);
+                    btnClearForm_Click(sender, new EventArgs());
+                    break;
+                default:
+                    MessageBox.Show("Error occured, close the program.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
+        }
+
+        // Validate Product data
+        private bool ValidateProduct()
+        {
+            if (Validators.ValidateProductUPC(txtUPC.Text) == false)
+            {
+                txtUPC.Text = "";
+                txtUPC.Focus();
+                MessageBox.Show("Product UPC not valid. Please check that all data is entered and valid.");
+                return false;
+            }  // end if
+            if (Validators.ValidateProductPrice(txtPrice.Text) == false)
+            {
+                txtPrice.Text = "";
+                txtPrice.Focus();
+                MessageBox.Show("Product Price not valid.  Please check that all data is entered and valid.");
+                return false;
+            }  // end if
+            if (Validators.ValidateProductTitle(txtTitle.Text) == false)
+            {
+                txtTitle.Text = "";
+                txtTitle.Focus();
+                MessageBox.Show("Product Title not valid.  Please check that all data is entered and valid.");
+                return false;
+            }  // end if
+            if (Validators.ValidateProductQuantity(txtQuantity.Text) == false)
+            {
+                txtQuantity.Text = "";
+                txtQuantity.Focus();
+                MessageBox.Show("Product Quantity not valid.  Please check that all data is entered and valid.");
+                return false;
+            }  // end if
+            return true;
+        }   // end Validate Product data
+
+        private void btnEnterUPC_Click(object sender, EventArgs e)
+        {
+            bool temp = Validators.ValidateProductUPC(txtUPC.Text); //first make sure the format is correct
+            if (temp)
+            {
+                bool found; // boolean reference for search success
+                string pstring; // Product string updated upon product DB search call.
+                Product prod;
+
+                //  this returns an OleDbDataReader object, but you don't really need to use it
+                //  the boolean flag and string that are returned are important
+                //  pstring will hold the attributes of a product from the database in a single string, separated by newline characters
+                //  split it below 
+
+                OleDbDataReader odb = dbFunctions.SelectProductFromProduct(Convert.ToInt32(txtUPC.Text), out found, out pstring);
+
+                if (!found) //not found
+                {
+                    MessageBox.Show("Product not found");
+                    txtUPC.Clear();
+                    txtUPC.Focus();
+
+                } // Creates a new product to display in form.
+                else
+                {
+                    string[] attributes = pstring.Split('\n'); // splits product attributes into array
+
+                    for (int i = 0; i < attributes.Length; i++)
+                    {
+                        attributes[i] = attributes[i].Trim('\r'); // clears "junk" from each field
+                    }
+
+                    string ptype = attributes[4]; // gets the product type from this attribute and then creates new product to display in form
+
+                    if (ptype == "DVD")
+                    {
+                        prod = new Classes.DVD(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
+                            attributes[5], DateTime.Parse(attributes[6]), Convert.ToInt32(attributes[7]));
+                        prod.Display(this);
+                        
+                        txtUPC.Clear();
+                    }
+                    /*
+                     *
+                     * add else ifs for the other product types and handle each accordingly
+                     *
+                     */
+                    else
+                    {
+                        MessageBox.Show("Not a valid product type");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Not a valid UPC");
+            }
         }
     }
 }

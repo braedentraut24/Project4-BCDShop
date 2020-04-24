@@ -109,13 +109,15 @@
             // 
             // lblWelcome
             // 
+            this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(240, 9);
+            this.lblWelcome.Location = new System.Drawing.Point(200, 19);
             this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(507, 26);
+            this.lblWelcome.Size = new System.Drawing.Size(552, 24);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Data Entry and Viewing Form for Book CD and DVD Shop";
+            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTransactions
             // 

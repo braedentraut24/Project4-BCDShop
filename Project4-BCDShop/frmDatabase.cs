@@ -65,23 +65,24 @@ namespace Project4_BCDShop
 
                 case "save":
 
-                    creationStage = "create";
-                    btnCreateBook.Text = "Create Book";
-                    lblPanelBook.Enabled = false;
-                    pnlBook.Enabled = false;
-
-                    toggleProductControls(false);
-                    toggleDataControls(true);
-                    toggleTransactionButtons(true, sender);
-
                     string fullISBN = txtISBNLeft.Text + txtISBNRight.Text;
 
+                    if (ValidateProduct() && Validators.ValidateBook(fullISBN, txtAuthor.Text, txtPages.Text))
+                    {
+                        dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                        txtTitle.Text, Convert.ToInt32(txtQuantity.Text), "Book");
+                        dbFunctions.InsertBook(Convert.ToInt32(txtUPC.Text), Convert.ToInt32(fullISBN), txtAuthor.Text, Convert.ToInt32(txtPages.Text));
 
-                    dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), "Book");
-                    dbFunctions.InsertBook(Convert.ToInt32(txtUPC.Text), Convert.ToInt32(fullISBN), txtAuthor.Text, Convert.ToInt32(txtPages.Text));
+                        creationStage = "create";
+                        btnCreateBook.Text = "Create Book";
+                        lblPanelBook.Enabled = false;
+                        pnlBook.Enabled = false;
 
-                    btnClearForm_Click(sender, new EventArgs());
+                        toggleProductControls(false);
+                        toggleDataControls(true);
+                        toggleTransactionButtons(true, sender);
+                        btnClearForm_Click(sender, new EventArgs());
+                    }
 
                     
 

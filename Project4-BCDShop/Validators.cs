@@ -34,9 +34,9 @@ namespace Project4_BCDShop
                 return false;
         }  // end ValidateProduct
 
-        public static bool ValidateBook(string UPC, string price, string title, string quantity, string ISBN, string authors, string pageCount)
+        public static bool ValidateBook(string ISBN, string authors, string pageCount)
         {
-            if (ValidateProduct(UPC, price, title, quantity) && ValidateBookISBN(ISBN) && ValidateBookAuthors(authors) && ValidateBookPageCount(pageCount))
+            if (ValidateBookISBN(ISBN) && ValidateBookAuthors(authors) && ValidateBookPageCount(pageCount))
             {
                 return true;
             }
@@ -47,9 +47,9 @@ namespace Project4_BCDShop
 
         }
 
-        public static bool ValidateBookCIS(string UPC, string price, string title, string quantity, string ISBN, string authors, string pageCount, string CISAreas)
+        public static bool ValidateBookCIS(string ISBN, string authors, string pageCount, string CISAreas)
         {
-            if (ValidateBook(UPC, price, title, quantity, ISBN, authors, pageCount) && ValidateBookCISAreas(CISAreas))
+            if (ValidateBook(ISBN, authors, pageCount) && ValidateBookCISAreas(CISAreas))
             {
                 return true;
             }
@@ -59,9 +59,9 @@ namespace Project4_BCDShop
             }
         }
 
-        public static bool ValidateDVD(string UPC, string price, string title, string quantity, string actors, string releaseDate, string runTime)
+        public static bool ValidateDVD(string actors, string releaseDate, string runTime)
         {
-            if (ValidateProduct(UPC, price, title, quantity) && ValidateDVDActors(actors) && ValidateDVDReleaseDate(releaseDate) && ValidateDVDRunTime(runTime))
+            if (ValidateDVDActors(actors) && ValidateDVDReleaseDate(releaseDate) && ValidateDVDRunTime(runTime))
             {
                 return true;
             }
@@ -71,9 +71,9 @@ namespace Project4_BCDShop
             }
         }
 
-        public static bool ValidateCDClassical(string UPC, string price, string title, string quantity, string label, string artists)
+        public static bool ValidateCDClassical(string label, string artists)
         {
-            if (ValidateProduct(UPC, price, title, quantity) && ValidateCDLabel(label) && ValidateCDArtists(artists))
+            if (ValidateCDLabel(label) && ValidateCDArtists(artists))
             {
                 return true;
             }
@@ -83,9 +83,9 @@ namespace Project4_BCDShop
             }
         }
 
-        public static bool ValidateCDOrchestra(string UPC, string price, string title, string quantity, string label, string artists, string conductor)
+        public static bool ValidateCDOrchestra(string label, string artists, string conductor)
         {
-            if (ValidateCDClassical(UPC, price, title, quantity, label, artists) && ValidateCDConductor(conductor))
+            if (ValidateCDClassical(label, artists) && ValidateCDConductor(conductor))
             {
                 return true;
             }
@@ -95,9 +95,9 @@ namespace Project4_BCDShop
             }
         }
 
-        public static bool ValidateCDChamber(string UPC, string price, string title, string quantity, string label, string artists, string instruments)
+        public static bool ValidateCDChamber(string label, string artists, string instruments)
         {
-            if (ValidateCDClassical(UPC, price, title, quantity, label, artists) && ValidateCDInstruments(instruments))
+            if (ValidateCDClassical(label, artists) && ValidateCDInstruments(instruments))
             {
                 return true;
             }

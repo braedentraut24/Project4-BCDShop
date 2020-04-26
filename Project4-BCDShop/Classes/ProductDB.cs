@@ -325,8 +325,9 @@ namespace Project4_BCDShop.Classes
                 {
                     myDataReader = SelectProductFromCDChamber(ProductUPC, out OKFlag, out fieldsFound);
                 }
+                
             }
-            catch (OleDbException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("There was a Select from Product error: " + ex.Message,
                     "Select from Product Failed", MessageBoxButtons.OK);

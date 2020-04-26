@@ -11,7 +11,7 @@ namespace Project4_BCDShop.Classes
         private string fieldsFound = "";
 
         // Connection string for ProductDB (type: Microsoft Access) in the Resources folder
-        private string strConnection = "provider=Microsoft.ACE.OLEDB.16.0;" + "Data Source=../Debug/ProductDB.accdb";
+        private string strConnection = "provider=Microsoft.ACE.OLEDB.16.0;" + "Data Source=../Debug/ProductDB-2.accdb";
 
         //string strConnection = "provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source= " +
         //    "L:\\ALL MY DATA\\Frank's Syllabus\\AAA CIS 3309 CSharp F19-S20\\CIS 3309 All Projects 2019-20\\BookCDDVD Project (adapted Jupin) DB Version\\ProductDB.accdb";

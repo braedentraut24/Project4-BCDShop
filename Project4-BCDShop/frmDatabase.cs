@@ -8,6 +8,7 @@ namespace Project4_BCDShop
     {
         private String creationStage = "create";
         private Classes.ProductDB dbFunctions = new Classes.ProductDB();
+
         public frmDatabase()
         {
             InitializeComponent();
@@ -309,6 +310,7 @@ namespace Project4_BCDShop
         {
             this.Close();
         }
+
         /// <summary>
         /// Toggles the bottom panel and it's label
         /// </summary>
@@ -355,11 +357,12 @@ namespace Project4_BCDShop
                 lblQuantity.Enabled = false;
             }
         }
+
         /// <summary>
         /// Toggles the transaction choice buttons, but keeps the "sender" button active.
         /// </summary>
         /// <param name="onOrOff"> Set to true to enable, false to disable. </param>
-        /// <param name="sender"> This should be the sender parameter from the same method this method is called in. </param>
+        /// <param name="sender"> This should be the sender parameter from the same button click handler method this method is called in. </param>
         private void toggleTransactionButtons(bool onOrOff, object sender)
         {
             if (onOrOff == true)
@@ -380,7 +383,7 @@ namespace Project4_BCDShop
             }
             ((Button)sender).Enabled = true;
         }
-        // Validate Product data
+
         private bool ValidateProduct()
         {
             if (Validators.ValidateProductUPC(txtUPC.Text) == false)

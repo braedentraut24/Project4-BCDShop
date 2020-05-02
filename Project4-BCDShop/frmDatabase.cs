@@ -7,6 +7,7 @@ namespace Project4_BCDShop
     public partial class frmDatabase : Form
     {
         private String creationStage = "create";
+        private String updateStage = "search";
         private Classes.ProductDB dbFunctions = new Classes.ProductDB();
 
         public frmDatabase()
@@ -248,6 +249,84 @@ namespace Project4_BCDShop
             }
         }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            bool temp = Validators.ValidateProductUPC(txtUPC.Text); //first make sure the format is correct
+            if (temp)
+            {
+                bool found; // boolean reference for search success
+                string pstring; // Product string updated upon product DB search call.
+                Product prod;
+
+                //  this returns an OleDbDataReader object, but you don't really need to use it
+                //  the boolean flag and string that are returned are important
+                //  pstring will hold the attributes of a product from the database in a single string, separated by newline characters
+                //  split it below
+
+                OleDbDataReader odb = dbFunctions.SelectProductFromProduct(Convert.ToInt32(txtUPC.Text), out found, out pstring);
+
+                if (!found) //not found
+                {
+                    MessageBox.Show("Product not found");
+                    txtUPC.Clear();
+                    txtUPC.Focus();
+                } // Creates a new product to display in form.
+                else
+                {
+                    string[] attributes = pstring.Split('\n'); // splits product attributes into array
+
+                    for (int i = 0; i < attributes.Length; i++)
+                    {
+                        attributes[i] = attributes[i].Trim('\r'); // clears "junk" from each field
+                    }
+
+                    string ptype = attributes[4]; // gets the product type from this attribute and then creates new product to display in form
+
+                    switch (ptype)
+                    {
+                        case "DVD":
+                            prod = new Classes.DVD(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
+                                attributes[5], DateTime.Parse(attributes[6]), Convert.ToInt32(attributes[7]));
+                            prod.Display(this);
+                            break;
+
+                        case "Book":
+                            prod = new Classes.Book(Convert.ToInt32(attributes[0]), Decimal.Parse(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
+                                Convert.ToInt32(attributes[5]), attributes[6], Convert.ToInt32(attributes[7]));
+                            prod.Display(this);
+                            break;
+
+                        case "BookCIS":
+                            prod = new Classes.BookCIS(Convert.ToInt32(attributes[0]), Decimal.Parse(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
+                                Convert.ToInt32(attributes[5]), attributes[6], Convert.ToInt32(attributes[7]), attributes[8]);
+                            prod.Display(this);
+                            break;
+
+                        case "CDOrchestra":
+                            prod = new Classes.CDOrchestra(Convert.ToInt32(attributes[0]), Decimal.Parse(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
+                                attributes[5], attributes[6], attributes[7]);
+                            prod.Display(this);
+                            break;
+
+                        case "CDChamber":
+                            prod = new Classes.CDChamber(Convert.ToInt32(attributes[0]), Decimal.Parse(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
+                                attributes[5], attributes[6], attributes[7]);
+                            prod.Display(this);
+                            break;
+
+                        default:
+                            MessageBox.Show("Error displaying product, please close the program.", "Error Displaying Product",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Not a valid UPC");
+            }
+        }
+
         private void btnEnterUPC_Click(object sender, EventArgs e)
         {
             bool temp = Validators.ValidateProductUPC(txtUPC.Text); //first make sure the format is correct
@@ -281,22 +360,42 @@ namespace Project4_BCDShop
 
                     string ptype = attributes[4]; // gets the product type from this attribute and then creates new product to display in form
 
-                    if (ptype == "DVD")
+                    switch (ptype)
                     {
-                        prod = new Classes.DVD(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
-                            attributes[5], DateTime.Parse(attributes[6]), Convert.ToInt32(attributes[7]));
-                        prod.Display(this);
+                        case "DVD":
+                            prod = new Classes.DVD(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
+                                attributes[5], DateTime.Parse(attributes[6]), Convert.ToInt32(attributes[7]));
+                            prod.Display(this);
+                            break;
 
-                        txtUPC.Clear();
-                    }
-                    /*
-                     *
-                     * add else ifs for the other product types and handle each accordingly
-                     *
-                     */
-                    else
-                    {
-                        MessageBox.Show("Not a valid product type");
+                        case "Book":
+                            prod = new Classes.Book(Convert.ToInt32(attributes[0]), Decimal.Parse(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
+                                Convert.ToInt32(attributes[5]), attributes[6], Convert.ToInt32(attributes[7]));
+                            prod.Display(this);
+                            break;
+
+                        case "BookCIS":
+                            prod = new Classes.BookCIS(Convert.ToInt32(attributes[0]), Decimal.Parse(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
+                                Convert.ToInt32(attributes[5]), attributes[6], Convert.ToInt32(attributes[7]), attributes[8]);
+                            prod.Display(this);
+                            break;
+
+                        case "CDOrchestra":
+                            prod = new Classes.CDOrchestra(Convert.ToInt32(attributes[0]), Decimal.Parse(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
+                                attributes[5], attributes[6], attributes[7]);
+                            prod.Display(this);
+                            break;
+
+                        case "CDChamber":
+                            prod = new Classes.CDChamber(Convert.ToInt32(attributes[0]), Decimal.Parse(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
+                                attributes[5], attributes[6], attributes[7]);
+                            prod.Display(this);
+                            break;
+
+                        default:
+                            MessageBox.Show("Error displaying product, please close the program.", "Error Displaying Product",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
                     }
                 }
             }
@@ -416,5 +515,6 @@ namespace Project4_BCDShop
             }  // end if
             return true;
         }   // end Validate Product data
+
     }
 }

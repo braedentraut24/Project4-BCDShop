@@ -7,8 +7,10 @@ namespace Project4_BCDShop
     public partial class frmDatabase : Form
     {
         private String creationStage = "create";
-        private String updateStage = "search";
         private Classes.ProductDB dbFunctions = new Classes.ProductDB();
+
+        private Boolean readyToSave = false;
+        private Boolean readyToDelete = false;
 
         public frmDatabase()
         {
@@ -249,53 +251,6 @@ namespace Project4_BCDShop
             }
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            switch (updateStage)
-            {
-                case "search":
-                    bool found;
-                    string pstring;
-                    btnEnterUPC_Click(sender, e);
-                    OleDbDataReader odb = dbFunctions.SelectProductFromProduct(Convert.ToInt32(txtUPC.Text), out found, out pstring);
-                    string[] attributes = pstring.Split('\n');
-                    string ptype = attributes[4];
-                    toggleProductControls(true);
-                    btnEdit.Text = "Save Edit";
-                    updateStage = "save";
-                    switch (ptype)
-                    {
-                        case "Book":
-                            pnlBook.Enabled = true;
-                            lblPanelBook.Enabled = true;
-                            break;
-                        case "BookCIS":
-                            pnlBook.Enabled = true;
-                            lblPanelBook.Enabled = true;
-                            pnlBookCIS.Enabled = true;
-                            lblPanelBookCIS.Enabled = true;
-                            break;
-                        case "DVD":
-                            pnlDVD.Enabled = true;
-                            lblPanelDVD.Enabled = true;
-                            break;
-                        case "CDOrchestra":
-                            pnlCDClassical.Enabled = true;
-                            lblPanelCDClassical.Enabled = true;
-                            pnlOrchestral.Enabled = true;
-                            lblPanelOrchestral.Enabled = true;
-                            break;
-                        case "CDChamber":
-                            pnlCDClassical.Enabled = true;
-                            lblPanelCDClassical.Enabled = true;
-                            pnlChamber.Enabled = true;
-                            lblPanelChamber.Enabled = true;
-                            break;
-                    }
-                    break;
-                //case "save":
-            }
-        }
 
         private void btnEnterUPC_Click(object sender, EventArgs e)
         {
@@ -321,6 +276,7 @@ namespace Project4_BCDShop
                 } // Creates a new product to display in form.
                 else
                 {
+                    readyToDelete = true;
                     string[] attributes = pstring.Split('\n'); // splits product attributes into array
 
                     for (int i = 0; i < attributes.Length; i++)
@@ -488,5 +444,76 @@ namespace Project4_BCDShop
             return true;
         }   // end Validate Product data
 
+        private void btnEdit_Click_1(object sender, EventArgs e)
+        {
+            readyToSave = true;
+            
+            bool found;
+            string pstring;
+            btnEnterUPC_Click(sender, e);
+            OleDbDataReader odb = dbFunctions.SelectProductFromProduct(Convert.ToInt32(txtUPC.Text), out found, out pstring);
+            string[] attributes = pstring.Split('\n');
+            string ptype = attributes[4];
+            ptype = ptype.Trim('\r');
+            toggleProductControls(true);
+            switch (ptype)
+            {
+                case "Book":
+                    pnlBook.Enabled = true;
+                    lblPanelBook.Enabled = true;
+                    break;
+                case "BookCIS":
+                    pnlBook.Enabled = true;
+                    lblPanelBook.Enabled = true;
+                    pnlBookCIS.Enabled = true;
+                    lblPanelBookCIS.Enabled = true;
+                    break;
+                case "DVD":
+                    pnlDVD.Enabled = true;
+                    lblPanelDVD.Enabled = true;
+                    break;
+                case "CDOrchestra":
+                    pnlCDClassical.Enabled = true;
+                    lblPanelCDClassical.Enabled = true;
+                    pnlOrchestral.Enabled = true;
+                    lblPanelOrchestral.Enabled = true;
+                    break;
+                case "CDChamber":
+                    pnlCDClassical.Enabled = true;
+                    lblPanelCDClassical.Enabled = true;
+                    pnlChamber.Enabled = true;
+                    lblPanelChamber.Enabled = true;
+                    break;
+            }
+        }
+
+        private void btnSaveUpdates_Click(object sender, EventArgs e)
+        {
+            if (!readyToSave)
+            {
+                MessageBox.Show("You have not selected an object to update yet");
+            }
+
+            else
+            {
+                readyToSave = false;
+            }
+            
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (!readyToDelete)
+            {
+                MessageBox.Show("You have not selected an object to delete yet");
+            }
+            else
+            {
+                dbFunctions.Delete(Convert.ToInt32(txtUPC.Text));
+                MessageBox.Show("Object successfully deleted");
+                readyToDelete = false;
+                btnClearForm_Click(sender, new EventArgs());
+            }
+        }
     }
 }

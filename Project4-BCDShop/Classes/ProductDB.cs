@@ -484,6 +484,8 @@ namespace Project4_BCDShop.Classes
                 dbStringProduct = dbStringProduct + myDataReader["fldQuantity"].ToString() + Environment.NewLine;
                 dbStringProduct = dbStringProduct + myDataReader["fldProductType"].ToString() + Environment.NewLine;
 
+                dbStringCDChamber = dbStringCDChamber + myDataReader["fldLabel"].ToString() + Environment.NewLine;
+                dbStringCDChamber = dbStringCDChamber + myDataReader["fldArtists"].ToString() + Environment.NewLine;
                 dbStringCDChamber = dbStringCDChamber + myDataReader["fldInstrumentList"].ToString() + Environment.NewLine;
             }
             catch (OleDbException ex)
@@ -537,6 +539,8 @@ namespace Project4_BCDShop.Classes
                 dbStringProduct = dbStringProduct + myDataReader["fldQuantity"].ToString() + Environment.NewLine;
                 dbStringProduct = dbStringProduct + myDataReader["fldProductType"].ToString() + Environment.NewLine;
 
+                dbStringCDOrchestra = dbStringCDOrchestra + myDataReader["fldLabel"].ToString() + Environment.NewLine;
+                dbStringCDOrchestra = dbStringCDOrchestra + myDataReader["fldArtists"].ToString() + Environment.NewLine;
                 dbStringCDOrchestra = dbStringCDOrchestra + myDataReader["fldConductor"].ToString() + Environment.NewLine;
             }
             catch (OleDbException ex)
@@ -634,7 +638,7 @@ namespace Project4_BCDShop.Classes
                 if (myDataReader.HasRows == false) OKFlag = false;
                 else OKFlag = true; // returns true if Select was successful
 
-                myDataReader = null;
+                
 
                 myDataReader.Read();
                 dbStringProduct = myDataReader["fldUPC"].ToString() + Environment.NewLine;
@@ -643,6 +647,9 @@ namespace Project4_BCDShop.Classes
                 dbStringProduct = dbStringProduct + myDataReader["fldQuantity"].ToString() + Environment.NewLine;
                 dbStringProduct = dbStringProduct + myDataReader["fldProductType"].ToString() + Environment.NewLine;
 
+                dbStringBookCIS = dbStringBookCIS + myDataReader["fldISBN"].ToString() + Environment.NewLine;
+                dbStringBookCIS = dbStringBookCIS + myDataReader["fldAuthor"].ToString() + Environment.NewLine;
+                dbStringBookCIS = dbStringBookCIS + myDataReader["fldPages"].ToString() + Environment.NewLine;
                 dbStringBookCIS = dbStringBookCIS + myDataReader["fldCISArea"].ToString() + Environment.NewLine;
             }
             catch (OleDbException ex)

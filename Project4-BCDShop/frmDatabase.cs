@@ -293,7 +293,7 @@ namespace Project4_BCDShop
                             break;
                     }
                     break;
-                case "save":
+                //case "save":
             }
         }
 
@@ -327,6 +327,8 @@ namespace Project4_BCDShop
                     {
                         attributes[i] = attributes[i].Trim('\r'); // clears "junk" from each field
                     }
+
+                    
 
                     string ptype = attributes[4]; // gets the product type from this attribute and then creates new product to display in form
 

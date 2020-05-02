@@ -38,7 +38,7 @@ namespace Project4_BCDShop.Classes
         public override void Display(frmDatabase f)
         {
             base.Display(f);
-            //Idk what to do with the dropdown
+            f.comboCISArea.Text = hiddenAreas;
         }
 
         public override string ToString()

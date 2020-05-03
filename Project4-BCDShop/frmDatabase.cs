@@ -35,6 +35,8 @@ namespace Project4_BCDShop
             txtArtists.Text = "";
             txtConductor.Text = "";
             txtInstruments.Text = "";
+            readyToDelete = false;
+            readyToSave = false;
         }
 
         private void btnCreateBook_Click(object sender, EventArgs e)
@@ -450,7 +452,7 @@ namespace Project4_BCDShop
             
             bool found;
             string pstring;
-            btnEnterUPC_Click(sender, e);
+            
             OleDbDataReader odb = dbFunctions.SelectProductFromProduct(Convert.ToInt32(txtUPC.Text), out found, out pstring);
             string[] attributes = pstring.Split('\n');
             string ptype = attributes[4];
@@ -496,7 +498,82 @@ namespace Project4_BCDShop
 
             else
             {
-                readyToSave = false;
+                bool found;
+                string pstring;
+                OleDbDataReader odb = dbFunctions.SelectProductFromProduct(Convert.ToInt32(txtUPC.Text), out found, out pstring);
+                string[] attributes = pstring.Split('\n');
+                string ptype = attributes[4];
+                ptype = ptype.Trim('\r');
+
+                
+
+                if (ptype == "Book")
+                {
+                    string fullISBN = txtISBNLeft.Text + txtISBNRight.Text;
+                    if (ValidateProduct() && Validators.ValidateBook(fullISBN, txtAuthor.Text, txtPages.Text))
+                    {
+                        dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text), txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
+                        dbFunctions.UpdateBook(Convert.ToInt32(txtUPC.Text), Convert.ToInt32(fullISBN), txtAuthor.Text, Convert.ToInt32(txtPages.Text));
+                        MessageBox.Show("Product Updated");
+                        readyToSave = false;
+                        readyToDelete = false;
+                        btnClearForm_Click(sender, new EventArgs());
+                    }
+                }
+                else if (ptype == "BookCIS")
+                {
+                    string fullISBN = txtISBNLeft.Text + txtISBNRight.Text;
+                    if (ValidateProduct() && Validators.ValidateBookCIS(fullISBN, txtAuthor.Text, txtPages.Text, comboCISArea.Text))
+                    {
+                        dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text), txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
+                        dbFunctions.UpdateBook(Convert.ToInt32(txtUPC.Text), Convert.ToInt32(fullISBN), txtAuthor.Text, Convert.ToInt32(txtPages.Text));
+                        dbFunctions.UpdateBookCIS(Convert.ToInt32(txtUPC.Text), comboCISArea.Text);
+                        MessageBox.Show("Product Updated");
+                        readyToSave = false;
+                        readyToDelete = false;
+                        btnClearForm_Click(sender, new EventArgs());
+                    }
+                }
+                else if (ptype == "DVD")
+                {
+                    if (ValidateProduct() && Validators.ValidateDVD(txtLeadActors.Text, dtpReleaseDate.Text, txtMins.Text))
+                    {
+                        dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text), txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
+                        dbFunctions.UpdateDVD(Convert.ToInt32(txtUPC.Text), txtLeadActors.Text, Convert.ToDateTime(dtpReleaseDate.Value.Date), Convert.ToInt32(txtMins.Text));
+                        MessageBox.Show("Product Updated");
+                        readyToSave = false;
+                        readyToDelete = false;
+                        btnClearForm_Click(sender, new EventArgs());
+                    }
+                }
+                else if (ptype == "CDOrchestra")
+                {
+                    if (ValidateProduct() && Validators.ValidateCDOrchestra(txtLabel.Text, txtArtists.Text, txtConductor.Text))
+                    {
+                        dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text), txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
+                        dbFunctions.UpdateCDClassical(Convert.ToInt32(txtUPC.Text), txtLabel.Text, txtArtists.Text);
+                        dbFunctions.UpdateCDOrchestra(Convert.ToInt32(txtUPC.Text), txtConductor.Text);
+                        MessageBox.Show("Product Updated");
+                        readyToSave = false;
+                        readyToDelete = false;
+                        btnClearForm_Click(sender, new EventArgs());
+                    }
+                }
+                else if (ptype == "CDChamber")
+                {
+                    if (ValidateProduct() && Validators.ValidateCDChamber(txtLabel.Text, txtArtists.Text, txtInstruments.Text))
+                    {
+                        dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text), txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
+                        dbFunctions.UpdateCDClassical(Convert.ToInt32(txtUPC.Text), txtLabel.Text, txtArtists.Text);
+                        dbFunctions.UpdateCDChamber(Convert.ToInt32(txtUPC.Text), txtInstruments.Text);
+                        MessageBox.Show("Product Updated");
+                        readyToSave = false;
+                        readyToDelete = false;
+                        btnClearForm_Click(sender, new EventArgs());
+                    }
+                }
+
+                
             }
             
         }

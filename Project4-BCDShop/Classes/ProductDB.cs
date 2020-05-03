@@ -677,7 +677,7 @@ namespace Project4_BCDShop.Classes
         public bool UpdateProduct(int UPC, decimal price, string title, int quantity)
         {
             string strUpdateProduct = "UPDATE Product SET " +
-                                     "fldUPC = " + UPC + "fldPrice = " + price + " fldTitle = '" + title + "' fldQuantity = " + quantity +
+                                     "fldUPC = " + UPC + ", fldPrice = " + price + ", fldTitle = '" + title + "', fldQuantity = " + quantity +
                                      " WHERE fldUPC = " + UPC;  // Update Product record that matches the UPC
 
             OleDbConnection myConnection = new OleDbConnection(strConnection);
@@ -702,8 +702,8 @@ namespace Project4_BCDShop.Classes
         public bool UpdateBook(int UPC, int ISBN, string author, int pages)
         {
             string strUpdateFaculty = "UPDATE Book SET " +
-                                    "fldISBN = " + ISBN + " fldAuthor = '" + author + "' fldPages = " + pages +
-                                    "WHERE fldUPC = " + UPC;
+                                    "fldISBN = " + ISBN + ", fldAuthor = '" + author + "', fldPages = " + pages +
+                                    " WHERE fldUPC = " + UPC;
 
             OleDbConnection myConnection = new OleDbConnection(strConnection);
             OleDbCommand myCommand = new OleDbCommand(strUpdateFaculty, myConnection);
@@ -753,8 +753,8 @@ namespace Project4_BCDShop.Classes
         public bool UpdateDVD(int UPC, string leadActor, DateTime releaseDate, int runTime)
         {
             string strUpdateFaculty = "UPDATE DVD SET " +
-                                    "fldUPC = " + UPC + " fldLeadActor = '" + leadActor + "' fldReleaseDate = " +
-                                    releaseDate + "fldRunTime = " + runTime +
+                                    "fldUPC = " + UPC + ", fldLeadActor = '" + leadActor + "', fldReleaseDate = " +
+                                    releaseDate + ", fldRunTime = " + runTime +
                                     "WHERE fldUPC = " + UPC;
 
             OleDbConnection myConnection = new OleDbConnection(strConnection);
@@ -780,7 +780,7 @@ namespace Project4_BCDShop.Classes
         public bool UpdateCDClassical(int UPC, string label, string artist)
         {
             // string strUpdateCDClassical = "SELECT * FROM CDClassical WHERE CDClassical.CDClassicalID = " + ProductUPC; // string select statement
-            string strUpdateCDClassical = "UPDATE CDClassical SET fldLabel = '" + label + "' , fldArtist = '" + artist + "'" +
+            string strUpdateCDClassical = "UPDATE CDClassical SET fldLabel = '" + label + "', fldArtist = '" + artist + "'" +
                                        " WHERE fldUPC = " + UPC;
 
             OleDbConnection myConnection = new OleDbConnection(strConnection);

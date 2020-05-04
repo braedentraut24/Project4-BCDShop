@@ -296,8 +296,8 @@ namespace Project4_BCDShop.Classes
                 dbStringProduct = dbStringProduct + myDataReader["fldQuantity"].ToString() + Environment.NewLine;
                 dbStringProduct = dbStringProduct + dbProductType + Environment.NewLine;
 
-                MessageBox.Show("Product Found ..." + Environment.NewLine
-                    + dbStringProduct, "Show Found Product", MessageBoxButtons.OK);
+                //MessageBox.Show("Product Found ..." + Environment.NewLine
+                    //+ dbStringProduct, "Show Found Product", MessageBoxButtons.OK);
 
                 //dbProductType = myDataReader["fldProductType"].ToString();
 

@@ -18,6 +18,9 @@ namespace Project4_BCDShop
             dtpReleaseDate.MaxDate = DateTime.Now;
         }
 
+        /// <summary>
+        /// Clears the text from the form's text based controls
+        /// </summary>
         private void btnClearForm_Click(object sender, EventArgs e)
         {
             txtUPC.Text = "";
@@ -39,6 +42,10 @@ namespace Project4_BCDShop
             readyToSave = false;
         }
 
+        /// <summary>
+        /// Allows the user to create a book and enter it into the database.
+        /// Has two stages: create and save which changes after each click.
+        /// </summary>
         private void btnCreateBook_Click(object sender, EventArgs e)
         {
             switch (creationStage)
@@ -82,6 +89,10 @@ namespace Project4_BCDShop
             }
         }
 
+        /// <summary>
+        /// Allows the user to create a CIS book and enter it into the database.
+        /// Has two stages: create and save which changes after each click.
+        /// </summary>
         private void btnCreateBookCIS_Click(object sender, EventArgs e)
         {
             switch (creationStage)
@@ -128,6 +139,10 @@ namespace Project4_BCDShop
             }
         }
 
+        /// <summary>
+        /// Allows the user to create a chamber CD and enter it into the database.
+        /// Has two stages: create and save which changes after each click.
+        /// </summary>
         private void btnCreateCDChmbr_Click(object sender, EventArgs e)
         {
             switch (creationStage)
@@ -171,6 +186,10 @@ namespace Project4_BCDShop
             }
         }
 
+        /// <summary>
+        /// Allows the user to create an orchestal CD and enter it into the database.
+        /// Has two stages: create and save which changes after each click.
+        /// </summary>
         private void btnCreateCDOrchl_Click(object sender, EventArgs e)
         {
             switch (creationStage)
@@ -214,6 +233,10 @@ namespace Project4_BCDShop
             }
         }
 
+        /// <summary>
+        /// Allows the user to create a DVD and enter it into the database.
+        /// Has two stages: create and save which changes after each click.
+        /// </summary>
         private void btnCreateDVD_Click(object sender, EventArgs e)
         {
             switch (creationStage)
@@ -253,7 +276,10 @@ namespace Project4_BCDShop
             }
         }
 
-
+        /// <summary>
+        /// If a user has entered a UPC, the form will display the information
+        /// on the product that contains the entered UPC.
+        /// </summary>
         private void btnEnterUPC_Click(object sender, EventArgs e)
         {
             bool temp = Validators.ValidateProductUPC(txtUPC.Text); //first make sure the format is correct
@@ -335,6 +361,9 @@ namespace Project4_BCDShop
             }
         }
 
+        /// <summary>
+        /// Closes the program completely.
+        /// </summary>
         private void btnExitProgram_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -413,6 +442,11 @@ namespace Project4_BCDShop
             ((Button)sender).Enabled = true;
         }
 
+        /// <summary>
+        /// Verifies that the text boxes have valid data for creating a
+        /// product from that data.
+        /// </summary>
+        /// <returns></returns>
         private bool ValidateProduct()
         {
             if (Validators.ValidateProductUPC(txtUPC.Text) == false)
@@ -446,6 +480,10 @@ namespace Project4_BCDShop
             return true;
         }   // end Validate Product data
 
+        /// <summary>
+        /// After a user enters a UPC and displays the product, clicking this button
+        /// will allow them to edit the properties on the object.
+        /// </summary>
         private void btnEdit_Click_1(object sender, EventArgs e)
         {
             readyToSave = true;
@@ -489,6 +527,9 @@ namespace Project4_BCDShop
             }
         }
 
+        /// <summary>
+        /// Saves the updates made in to a product.
+        /// </summary>
         private void btnSaveUpdates_Click(object sender, EventArgs e)
         {
             if (!readyToSave)
@@ -578,6 +619,9 @@ namespace Project4_BCDShop
             
         }
 
+        /// <summary>
+        /// Allows a user to delete a product which they have in the database.
+        /// </summary>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (!readyToDelete)
